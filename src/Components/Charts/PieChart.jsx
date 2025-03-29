@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import { pieChartData } from "../mockData.js";
 import "../../styles/Charts.scss";
 
@@ -21,12 +21,13 @@ const CustomPieChart = () => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
+        <Tooltip /> {/* ✅ Added Tooltip for showing data on hover */}
         <Legend
           align="center"
           verticalAlign="bottom"
           layout="horizontal"
           iconSize={10}
-          wrapperStyle={{ marginTop: "-10px", fontSize: "14px" }} // Reduces space between pie & legend
+          wrapperStyle={{ marginTop: "-10px", fontSize: "14px" }}
         />
       </PieChart>
     </div>
