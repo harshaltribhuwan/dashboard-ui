@@ -16,7 +16,6 @@ import "../styles/Table.scss";
 const OngoingTasksTable = () => {
   return (
     <TableContainer component={Paper} className="table-container">
-      <h4>Ongoing tasks</h4>
       <Table>
         <TableHead>
           <TableRow>

@@ -16,7 +16,6 @@ import "../styles/Table.scss";
 const ProjectTasksTable = () => {
   return (
     <TableContainer component={Paper} className="table-container">
-      <h4>Project Tasks</h4>
       <Table>
         <TableHead>
           <TableRow>
