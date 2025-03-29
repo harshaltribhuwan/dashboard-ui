@@ -1,0 +1,36 @@
+// src/styles/Tables.scss
+.table-container {
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #fff;
+
+    &.in-progress {
+      background-color: #2196f3;
+    }
+
+    &.to-do {
+      background-color: #ffca28;
+      color: #333;
+    }
+
+    &.completed {
+      background-color: #4caf50;
+    }
+
+    &.high {
+      background-color: #f44336;
+    }
+  }
+}
