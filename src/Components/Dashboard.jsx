@@ -1,7 +1,7 @@
 import React from "react";
-import LineChart from "./LineChart";
-import PieChart from "./PieChart";
-import StackedBarChart from "./StackedBarChart";
+import LineChart from "./Charts/LineChart";
+import PieChart from "./Charts/PieChart";
+import StackedBarChart from "./Charts/StackedBarChart.jsx";
 import OngoingTasksTable from "./OngoingTaskTable";
 import ProjectTasksTable from "./ProjectTaskTable.jsx";
 import "../styles/Dashboard.scss";

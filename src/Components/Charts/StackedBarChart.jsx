@@ -1,7 +1,7 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
-import { stackedBarChartData } from "./mockData.js";
-import "../styles/Charts.scss";
+import { stackedBarChartData } from "../mockData.js";
+import "../../styles/Charts.scss";
 
 const CustomStackedBarChart = () => {
   return (
