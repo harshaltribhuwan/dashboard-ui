@@ -9,7 +9,7 @@ import {
   Paper,
   IconButton,
 } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { projectTasksData } from "./mockData.js";
 import "../styles/Table.scss";
 
@@ -44,8 +44,8 @@ const ProjectTasksTable = () => {
                 </span>
               </TableCell>
               <TableCell>
-                <IconButton>
-                  <EditIcon />
+                <IconButton className="edit-icon">
+                  <EditOutlinedIcon />
                 </IconButton>
               </TableCell>
             </TableRow>

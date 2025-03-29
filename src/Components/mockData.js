@@ -10,7 +10,7 @@ export const lineChartData = [
 ];
 
 export const pieChartData = [
-    { name: "To-do", value: 20 },
+    { name: "To do", value: 20 },
     { name: "In progress", value: 30 },
     { name: "On hold", value: 10 },
     { name: "Completed", value: 40 },
@@ -24,14 +24,14 @@ export const stackedBarChartData = [
 
 export const ongoingTasksData = [
     { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "In progress" },
-    { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "To-do" },
+    { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "To do" },
     { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "Completed" },
     { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "In progress" },
-    { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "To-do" },
+    { manuscript: "World and Natural Resources", author: "Sarah Johnson", assignedTo: "John Kulkarani", lastUpdated: "March 25, 2025", status: "To do" },
 ];
 
 export const projectTasksData = [
     { task: "Content Review", assignedTo: "John Kulkarani", author: "Sarah Johnson", due: "March 25, 2025", priority: "High" },
-    { task: "Manuscript Screening", assignedTo: "John Kulkarani", author: "Sarah Johnson", due: "March 25, 2025", priority: "To-do" },
+    { task: "Manuscript Screening", assignedTo: "John Kulkarani", author: "Sarah Johnson", due: "March 25, 2025", priority: "To do" },
     { task: "PRA", assignedTo: "John Kulkarani", author: "Sarah Johnson", due: "March 25, 2025", priority: "Completed" },
 ];
