@@ -1,4 +1,4 @@
-@import "./variables";
+@use "./variables" as *;
 
 .table-container {
   border-radius: 12px;
@@ -78,8 +78,8 @@
       color: #0070B0 !important; // Apply the blue color
       transition: 0.3s;
   
-      &:hover {
-        color: darken(#0070B0, 10%); // Darken color on hover
-      }
+      // &:hover {
+      //   color: darken(#0070B0, 10%); // Darken color on hover
+      // }
     }
 }
