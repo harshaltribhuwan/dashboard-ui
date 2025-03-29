@@ -1,29 +1,63 @@
+@import "./variables";
+
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px; /* Fixed width */
+  width: 230px;
   height: 100vh;
   background-color: #F8FAFC;
   padding: 20px;
   border-right: 1px solid #ddd;
 
   h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #333;
+    font-family: $primary-font;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #00324E;
+  }
+
+  p {
+    margin-top: 20px;
+    color: #00324E;
+
+    font-family: $primary-font;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 1%;
   }
 
   .MuiListItem-root {
     padding: 10px 0;
-    color: #666;
+    display: flex;
+    align-items: center;
 
     &:hover {
+      cursor: pointer;
       background-color: #e0e0e0;
     }
   }
 
-  .MuiListItemIcon-root {
-    color: #666;
+  .MuiListItemText-primary {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1%;
+    color: #00324E;
+  }
+
+  .sidebar-circle-icon {
+    color: #0070B0;
+    /* Updated circle color */
+    margin-right: 10px;
+    font-size: 18px;
+  }
+
+  .sidebar-divider {
+    margin: 8px 0;
+    background-color: #B0BEC5;
   }
 }

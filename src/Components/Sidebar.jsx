@@ -1,39 +1,48 @@
-import React from "react";
-import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AssignmentIcon from "@mui/icons-material/Assignment";
-import ArticleIcon from "@mui/icons-material/Article";
-import PeopleIcon from "@mui/icons-material/People";
+import { List, ListItem, ListItemText } from "@mui/material";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked"; // Circle icon
 import "../styles/Sidebar.scss";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <h3>Editor Management Portal</h3>
+      <h3>
+        Editor <br />
+        Management Portal
+      </h3>
+
+      <p>Text</p>
+
       <List>
-        <ListItem button>
-          <ListItemIcon>
-            <DashboardIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
+        {/* Dashboard */}
+        <ListItem component="div">
+          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
+          <ListItemText
+            primary="Dashboard"
+            className="MuiListItemText-primary"
+          />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <AssignmentIcon />
-          </ListItemIcon>
-          <ListItemText primary="Tasks" />
+
+        {/* Tasks */}
+        <ListItem component="div">
+          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
+          <ListItemText primary="Tasks" className="MuiListItemText-primary" />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <ArticleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Articles" />
+
+        <hr className="sidebar-divider" />
+
+        {/* Articles */}
+        <ListItem component="div">
+          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
+          <ListItemText
+            primary="Articles"
+            className="MuiListItemText-primary"
+          />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <PeopleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Users" />
+
+        {/* Users */}
+        <ListItem component="div">
+          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
+          <ListItemText primary="Users" className="MuiListItemText-primary" />
         </ListItem>
       </List>
     </div>
