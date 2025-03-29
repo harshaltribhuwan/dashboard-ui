@@ -13,15 +13,26 @@ const Dashboard = () => {
         <h2>Hi Ted!</h2>
       </div>
       <div className="charts">
-        <LineChart />
-        <PieChart />
-        <StackedBarChart />
+        <div className="line-chart">
+          <LineChart />
+        </div>
+        <div className="pie-chart">
+          <PieChart />
+        </div>
+        <div className="bar-chart">
+          <StackedBarChart />
+        </div>
       </div>
-      <h4 className="table-heading">Ongoing tasks</h4>
+
+      <div className="heading-container">
+        <h4 className="table-heading">Ongoing tasks</h4>
+      </div>
 
       <OngoingTasksTable />
 
-      <h4>Project Tasks</h4>
+      <div>
+        <h4 className="table-heading">Project Tasks</h4>
+      </div>
 
       <ProjectTasksTable />
     </div>
