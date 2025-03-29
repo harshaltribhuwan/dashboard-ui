@@ -2,7 +2,10 @@
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #94A3B8;
+  box-shadow: 0px 2px 8px -1px #1E293B1F;
+// box-shadow: 0px 2px 2px 1px #1E293B0A;
+
   flex: 1; /* Allow chart containers to grow and take available space */
 
   h4 {
