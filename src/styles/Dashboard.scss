@@ -1,9 +1,10 @@
 @use "./variables" as *;
 
 .dashboard {
-  margin-left: 230px;
+margin-left: 230px;
   padding: 20px;
-  width: calc(100% - 230px);
+  width: 80%; // ✅ Instead of taking full remaining space, it will take 80%
+  max-width: calc(100% - 230px); // ✅ Ensures it doesn’t exceed available space
   box-sizing: border-box;
 
   .header {

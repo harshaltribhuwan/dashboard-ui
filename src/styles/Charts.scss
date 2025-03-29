@@ -41,9 +41,11 @@
 
   text {
     fill: black !important;
+    /* ✅ Ensures the text remains visible */
   }
 
   .recharts-surface {
-    fill: unset !important;
+    fill: currentColor !important;
+    /* ✅ Keeps legend dots in correct pie colors */
   }
 }
