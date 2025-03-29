@@ -1,4 +1,3 @@
-// src/components/Sidebar.js
 import React from "react";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";

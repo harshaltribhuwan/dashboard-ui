@@ -1,6 +1,6 @@
 // src/App.scss
 .App {
   display: flex;
-  font-family: "Merriweather Sans", sans-serif;
-  
+  width: 100vw; /* Ensure the App takes the full viewport width */
+  min-height: 100vh; /* Ensure it takes the full height */
 }

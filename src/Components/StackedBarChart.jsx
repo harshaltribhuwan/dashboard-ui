@@ -1,4 +1,3 @@
-// src/components/StackedBarChart.js
 import React from "react";
 import {
   BarChart,
@@ -14,7 +13,7 @@ import "../styles/Charts.scss";
 
 const CustomStackedBarChart = () => {
   return (
-    <div className="chart-container">
+    <div className="chart-container small-chart">
       <h4>Completed Issues</h4>
       <BarChart width={200} height={200} data={stackedBarChartData}>
         <CartesianGrid strokeDasharray="3 3" />

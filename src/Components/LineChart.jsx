@@ -1,4 +1,3 @@
-// src/components/LineChart.js
 import React from "react";
 import {
   LineChart,
@@ -13,7 +12,7 @@ import "../styles/Charts.scss";
 
 const CustomLineChart = () => {
   return (
-    <div className="chart-container">
+    <div className="chart-container line-chart">
       <h4>Completed Articles</h4>
       <LineChart width={400} height={200} data={lineChartData}>
         <CartesianGrid strokeDasharray="3 3" />

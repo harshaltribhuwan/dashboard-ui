@@ -1,9 +1,9 @@
-// src/styles/Charts.scss
 .chart-container {
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allow chart containers to grow and take available space */
 
   h4 {
     font-size: 14px;
