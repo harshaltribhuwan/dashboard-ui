@@ -37,10 +37,20 @@
 
   h4 {
     font-family: $primary-font;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 30px;
-      letter-spacing: 0%;
-      vertical-align: middle;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+
+  .table-heading {
+    margin-top: 35px;
+    font-family: $primary-font;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    vertical-align: middle;
   }
 }

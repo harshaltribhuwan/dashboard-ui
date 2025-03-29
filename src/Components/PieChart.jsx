@@ -3,26 +3,31 @@ import { PieChart, Pie, Cell, Legend } from "recharts";
 import { pieChartData } from "./mockData.js";
 import "../styles/Charts.scss";
 
-const COLORS = ["#2196f3", "#90caf9", "#e0e0e0", "#bdbdbd"];
+const COLORS = ["#00324E", "#F8FAFC", "#94A3B8", "#0070B0"];
 
 const CustomPieChart = () => {
   return (
     <div className="chart-container small-chart">
       <h4>Manuscript Status</h4>
-      <PieChart width={200} height={200}>
+      <PieChart width={230} height={220}>
         <Pie
           data={pieChartData}
-          cx={100}
-          cy={100}
-          outerRadius={80}
-          fill="#8884d8"
+          cx="50%"
+          cy="50%" // Adjust this if needed
+          outerRadius={65}
           dataKey="value"
         >
           {pieChartData.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend />
+        <Legend
+          align="center"
+          verticalAlign="bottom"
+          layout="horizontal"
+          iconSize={10}
+          wrapperStyle={{ marginTop: "-10px", fontSize: "14px" }} // Reduces space between pie & legend
+        />
       </PieChart>
     </div>
   );

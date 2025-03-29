@@ -17,7 +17,7 @@ const Dashboard = () => {
         <PieChart />
         <StackedBarChart />
       </div>
-      <h4>Ongoing tasks</h4>
+      <h4 className="table-heading">Ongoing tasks</h4>
 
       <OngoingTasksTable />
 

@@ -10,10 +10,10 @@ export const lineChartData = [
 ];
 
 export const pieChartData = [
-    { name: "To do", value: 20 },
-    { name: "In progress", value: 30 },
+    { name: "To do", value: 30 },
+    { name: "In progress", value: 5 },
     { name: "On hold", value: 10 },
-    { name: "Completed", value: 40 },
+    { name: "Completed", value: 20 },
 ];
 
 export const stackedBarChartData = [
