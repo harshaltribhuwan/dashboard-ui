@@ -107,15 +107,6 @@ const EditProject = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setFormData((prev) => ({ ...prev, file }));
-  };
-
-  const handleRemoveFile = () => {
-    setFormData((prev) => ({ ...prev, file: null }));
-  };
-
   const handleSave = () => {
     console.log("Saving form data:", formData);
     // Add save logic here (e.g., API call)
@@ -363,47 +354,6 @@ const EditProject = () => {
               <MenuItem value="Low">Low</MenuItem>
             </Select>
           </FormControl>
-        </Box>
-      </Box>
-
-      {/* File Upload Section */}
-      <Box className="section">
-        <Typography variant="h6" className="section-title">
-          Assigned to
-        </Typography>
-        <Box className="file-upload">
-          <Box className="drop-zone">
-            <Typography>Drag and drop files here or BROWSE files</Typography>
-            <Typography variant="caption">
-              Supported formats: PDF, DOCX (max. 50 mb)
-            </Typography>
-            <input
-              type="file"
-              onChange={handleFileChange}
-              style={{ display: "none" }}
-              id="file-upload"
-            />
-            <label htmlFor="file-upload">
-              <Button
-                variant="outlined"
-                component="span"
-                className="browse-button"
-              >
-                BROWSE
-              </Button>
-            </label>
-          </Box>
-          {formData.file && (
-            <Box className="file-info">
-              <Typography>
-                {formData.file.name} (
-                {Math.round(formData.file.size / (1024 * 1024))} mb)
-              </Typography>
-              <IconButton onClick={handleRemoveFile}>
-                <CloseIcon />
-              </IconButton>
-            </Box>
-          )}
         </Box>
       </Box>
 

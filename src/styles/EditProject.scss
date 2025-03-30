@@ -9,7 +9,7 @@
     box-sizing: border-box;
     font-family: $primary-font;
 
-.header {
+    .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -17,20 +17,20 @@
 
         .left-section {
             display: flex;
-            align-items: center; 
-            gap: 8px; 
+            align-items: center;
+            gap: 8px;
 
             .MuiIconButton-root {
-                    color: #0070B0; // Change this to any color
-                }
+                color: #0070B0; // Change this to any color
+            }
         }
 
         h5 {
             font-family: $primary-font !important;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 30px;
-                letter-spacing: 0%;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 0%;
 
 
             color: #000000;
@@ -61,16 +61,25 @@
     }
 
     .section {
+        // width: 794px;
+            // height: 275px;
+            border-radius: var(--radius-lg, 8px); // Use CSS variable or default 8px
+            border: 0.5px solid var(--colors-neutral-400, #94A3B8);
+            padding: var(--gap-md, 16px) 12px; // Top & Bottom: gap-md (16px), Left & Right: 12px
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background-color: #fff;
         margin-bottom: 24px;
 
         .section-title {
-            font-family: $primary-font;
-            font-weight: 500; // Slightly less bold than the header
-            font-size: 16px; // Smaller than the main header
-            line-height: 24px; // Adjusted for better alignment
-            letter-spacing: 0%;
-            color: #00324E;
-            margin-bottom: 16px;
+            font-weight: 700 !important;
+            font-size: 20px !important;
+            line-height: 30px !important;
+            color: #00324E !important;
+            font-family: $primary-font !important;
+            margin-bottom: 16px !important;
         }
 
         .row {
