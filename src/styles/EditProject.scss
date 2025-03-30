@@ -79,54 +79,87 @@
             line-height: 18px !important;
         }
 
-        .row {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 8px;
-
-            .input-field {
-                flex: 1;
-
-                .MuiInputLabel-root {
-                    color: #666;
-                    font-size: 14px;
-                    font-family: $primary-font;
+                // Consistent margin & padding for input fields
+                .input-container {
+                    display: flex;
+                    flex-direction: column;
+                    // width: 100%;
+                    width: calc(50% - 8px);
+                        /* Each input takes half the row width */
+                        min-width: 250px;
                 }
+        
+                .row {
+                    display: flex;
+                    gap: 16px;
+                    flex-wrap: wrap;
 
+                    .input-field {
+                     flex: 1;
+                    min-width: 0;
+                    }
+
+                }
+        
+                // Matches Task Modal field height
+                .MuiTextField-root,
+                .MuiSelect-root {
+                    font-size: 14px !important;
+                }
+        
                 .MuiInputBase-root {
-                    font-size: 14px;
-                    color: #00324E;
-                    font-family: $primary-font;
-
-                    &.MuiInput-underline {
-                        &:before {
-                            border-bottom: 1px solid #ddd; // Light gray underline
-                        }
-
-                        &:after {
-                            border-bottom: 2px solid #0070B0; // Blue underline on focus
-                        }
-                    }
-
-                    &.MuiOutlinedInput-root {
-                        border-radius: 8px;
-
-                        .MuiOutlinedInput-notchedOutline {
-                            border-color: #ddd; // Light gray border for multiline fields
-                        }
-
-                        &:hover .MuiOutlinedInput-notchedOutline {
-                            border-color: #0070B0; // Blue border on hover
-                        }
-
-                        &.Mui-focused .MuiOutlinedInput-notchedOutline {
-                            border-color: #0070B0; // Blue border on focus
-                            border-width: 2px;
-                        }
-                    }
+                    height: 40px !important;
+                    padding: 5px 10px !important;
                 }
-            }
-        }
+
+        // .row {
+        //     display: flex;
+        //     gap: 16px;
+        //     margin-bottom: 8px;
+
+        //     .input-field {
+        //         flex: 1;
+
+        //         .MuiInputLabel-root {
+        //             color: #666;
+        //             font-size: 14px;
+        //             font-family: $primary-font;
+        //         }
+
+        //         .MuiInputBase-root {
+        //             font-size: 14px;
+        //             color: #00324E;
+        //             font-family: $primary-font;
+
+        //             &.MuiInput-underline {
+        //                 &:before {
+        //                     border-bottom: 1px solid #ddd; // Light gray underline
+        //                 }
+
+        //                 &:after {
+        //                     border-bottom: 2px solid #0070B0; // Blue underline on focus
+        //                 }
+        //             }
+
+        //             &.MuiOutlinedInput-root {
+        //                 border-radius: 8px;
+
+        //                 .MuiOutlinedInput-notchedOutline {
+        //                     border-color: #ddd; // Light gray border for multiline fields
+        //                 }
+
+        //                 &:hover .MuiOutlinedInput-notchedOutline {
+        //                     border-color: #0070B0; // Blue border on hover
+        //                 }
+
+        //                 &.Mui-focused .MuiOutlinedInput-notchedOutline {
+        //                     border-color: #0070B0; // Blue border on focus
+        //                     border-width: 2px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
         .author-branch {
             display: flex;

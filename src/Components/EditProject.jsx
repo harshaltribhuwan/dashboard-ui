@@ -154,18 +154,9 @@ const EditProject = () => {
             onChange={handleChange}
             variant="outlined"
             className="input-field"
-            label="" // Removes floating label
+            label=""
           />
         </Box>
-        {/* <TextField
-          // label="Manuscript Name"
-          name="manuscriptName"
-          value={formData.manuscriptName}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
-          className="input-field"
-        /> */}
         <Box>
           <Typography variant="subtitle1" className="label-title">
             Description
@@ -232,14 +223,21 @@ const EditProject = () => {
         <Typography variant="h6" className="section-title">
           Project Details
         </Typography>
+
+        {/* First Row */}
         <Box className="row">
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Category</InputLabel>
+          {/* Category */}
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Category
+            </Typography>
             <Select
               name="category"
               value={formData.category}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="Content Review">Content Review</MenuItem>
               <MenuItem value="Manuscript Screening">
@@ -247,72 +245,104 @@ const EditProject = () => {
               </MenuItem>
               <MenuItem value="PRA">PRA</MenuItem>
             </Select>
-          </FormControl>
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Project Type</InputLabel>
+          </Box>
+
+          {/* Project Type */}
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Project Type
+            </Typography>
             <Select
               name="projectType"
               value={formData.projectType}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="New Submission">New Submission</MenuItem>
               <MenuItem value="Resubmission">Resubmission</MenuItem>
             </Select>
-          </FormControl>
+          </Box>
         </Box>
+
+        {/* Second Row */}
         <Box className="row">
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Region</InputLabel>
+          {/* Region */}
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Region
+            </Typography>
             <Select
               name="region"
               value={formData.region}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="Asia">Asia</MenuItem>
               <MenuItem value="Europe">Europe</MenuItem>
               <MenuItem value="North America">North America</MenuItem>
             </Select>
-          </FormControl>
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Language</InputLabel>
+          </Box>
+
+          {/* Language */}
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Language
+            </Typography>
             <Select
               name="language"
               value={formData.language}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="English">English</MenuItem>
               <MenuItem value="Spanish">Spanish</MenuItem>
               <MenuItem value="French">French</MenuItem>
             </Select>
-          </FormControl>
+          </Box>
         </Box>
+
+        {/* Third Row */}
         <Box className="row">
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Review Period</InputLabel>
+          {/* Review Period */}
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Review Period
+            </Typography>
             <Select
               name="reviewPeriod"
               value={formData.reviewPeriod}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="1 month">1 month</MenuItem>
               <MenuItem value="3 months">3 months</MenuItem>
               <MenuItem value="6 months">6 months</MenuItem>
             </Select>
-          </FormControl>
-          <TextField
-            // label="Budget"
-            name="budget"
-            value={formData.budget}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            type="number"
-            className="input-field"
-          />
+          </Box>
+
+          {/* Budget */}
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Budget
+            </Typography>
+            <TextField
+              name="budget"
+              value={formData.budget}
+              onChange={handleChange}
+              fullWidth
+              margin="dense"
+              type="number"
+              variant="outlined"
+            />
+          </Box>
         </Box>
       </Box>
 
