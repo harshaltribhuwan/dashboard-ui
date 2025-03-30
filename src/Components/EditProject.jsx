@@ -498,6 +498,10 @@ const EditProject = () => {
         <Typography variant="h6" className="section-title">
           Editor Note
         </Typography>
+
+        <Typography variant="subtitle1" className="label-title">
+          Notes
+        </Typography>
         <TextField
           // label="Editor Note"
           name="editorNote"
@@ -514,6 +518,10 @@ const EditProject = () => {
       {/* Instructions Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
+          Instructions
+        </Typography>
+
+        <Typography variant="subtitle1" className="label-title">
           Instructions
         </Typography>
         <TextField
