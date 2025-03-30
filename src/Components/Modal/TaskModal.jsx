@@ -52,7 +52,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
   return (
     <Modal open={open} onClose={handleClose}>
       <Box className="modal-box" sx={{ fontFamily: "inherit" }}>
-        {/* Header */}
         <Box className="modal-header">
           <Typography variant="h6">Task Actions</Typography>
           <IconButton className="close-btn" onClick={handleClose}>
@@ -60,9 +59,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </IconButton>
         </Box>
 
-        {/* First Row: Manuscript & Author */}
         <Grid container spacing={2} alignItems="center" className="modal-row">
-          {/* Manuscript Section */}
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
               Manuscript
@@ -72,7 +69,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             </Typography>
           </Grid>
 
-          {/* Author Section */}
 
           {console.log(author)}
           <Grid item xs={12} md={6}>
@@ -96,11 +92,11 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
                         label={value}
                         onDelete={() => handleRemoveFile(value)}
                         sx={{
-                          backgroundColor: "#F1F5F9", // Custom background color
-                          color: "#0070B0", // Custom text color
+                          backgroundColor: "#F1F5F9",
+                          color: "#0070B0", 
                           fontWeight: "bold",
                           "& .MuiChip-deleteIcon": {
-                            color: "#0070B0", // Custom delete icon color
+                            color: "#0070B0",
                           },
                         }}
                       />
@@ -109,7 +105,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
                 ),
               }}
               variant="outlined"
-              label="" // Removes floating label
+              label=""
             >
               {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
                 <MenuItem key={option} value={option}>
@@ -133,7 +129,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               value={editedTask?.assignedTo || ""}
               onChange={handleChange}
               variant="outlined"
-              label="" // Removes floating label
+              label=""
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -148,7 +144,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               value={editedTask?.status || ""}
               onChange={handleChange}
               variant="outlined"
-              label="" // Removes floating label
+              label=""
             >
               <MenuItem value="In progress">In progress</MenuItem>
               <MenuItem value="To do">To do</MenuItem>
@@ -157,12 +153,10 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </Grid>
         </Grid>
 
-        {/* Assigned To Section (File Upload) */}
         <Typography variant="subtitle1" className="section-title">
           Assigned to
         </Typography>
         <Box className="file-upload-container">
-          {/* File Drop Area */}
           <Box
             className="file-drop-area"
             onDrop={handleFileDrop}
@@ -186,12 +180,10 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             />
           </Box>
 
-          {/* Supported Formats (Bottom, Right-aligned) */}
           <Typography className="file-format-info">
             Supported formats: PDF, DOCX (max. 50 mb)
           </Typography>
 
-          {/* File Preview (Below the upload area) */}
           {files.length > 0 && (
             <Box className="file-preview-container">
               {files.map((file, index) => (
@@ -209,7 +201,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           )}
         </Box>
 
-        {/* Modal Actions */}
         <Box className="modal-actions">
           <Button
             onClick={handleClose}

@@ -4,7 +4,7 @@ import { pieChartData } from "../mockData.js";
 import "../../styles/Charts.scss";
 
 // const COLORS = ["#00324E", "#F8FAFC", "#94A3B8", "#0070B0"]; original colors
-const COLORS = ["#00324E", "#005A87", "#94A3B8", "#0070B0"]; // for demo
+const COLORS = ["#00324E", "#005A87", "#94A3B8", "#0070B0"];
 
 const CustomPieChart = () => {
   return (
@@ -14,7 +14,7 @@ const CustomPieChart = () => {
         <Pie
           data={pieChartData}
           cx="50%"
-          cy="50%" // Adjust this if needed
+          cy="50%"
           outerRadius={65}
           dataKey="value"
         >
@@ -22,7 +22,7 @@ const CustomPieChart = () => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip /> {/* ✅ Added Tooltip for showing data on hover */}
+        <Tooltip />
         <Legend
           align="center"
           verticalAlign="bottom"

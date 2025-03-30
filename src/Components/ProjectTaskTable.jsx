@@ -11,14 +11,14 @@ import {
 } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { projectTasksData } from "./mockData.js";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "../styles/Table.scss";
 
 const ProjectTasksTable = () => {
   const navigate = useNavigate();
 
   const handleEditClick = (taskData) => {
-    navigate("/EditProject", { state: { taskData } }); // Navigate with state
+    navigate("/EditProject", { state: { taskData } });
   };
 
   return (

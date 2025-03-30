@@ -3,8 +3,8 @@
 .dashboard {
 margin-left: 230px;
   padding: 20px;
-  width: 80%; // ✅ Instead of taking full remaining space, it will take 80%
-  max-width: calc(100% - 230px); // ✅ Ensures it doesn’t exceed available space
+  width: 80%;
+  max-width: calc(100% - 230px);
   box-sizing: border-box;
 
   .header {
@@ -27,7 +27,7 @@ margin-left: 230px;
     display: flex;
     gap: 30px;
     margin-bottom: 20px;
-    height: 260px; // ✅ Ensures the whole row of charts has the same height
+    height: 260px;
     width: 100%;
     flex-wrap: wrap;
   }
@@ -56,7 +56,6 @@ margin-left: 230px;
 }
 
   .table-heading {
-    // margin-top: 35px;
     font-family: $primary-font;
     font-weight: 400;
     font-size: 20px;

@@ -10,7 +10,7 @@ import {
   IconButton,
 } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import TaskModal from "./Modal/TaskModal"; // Import the modal
+import TaskModal from "./Modal/TaskModal";
 import { ongoingTasksData } from "./mockData.js";
 import "../styles/Table.scss";
 

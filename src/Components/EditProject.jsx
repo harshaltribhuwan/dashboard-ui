@@ -1,4 +1,3 @@
-// src/components/EditProject.js
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -28,7 +27,7 @@ import excelIcon from "../assets/file-excel-line.svg?url";
 const EditProject = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const taskData = location.state?.taskData; // Get passed data
+  const taskData = location.state?.taskData;
 
   const [formData, setFormData] = useState({
     task: "",
@@ -101,7 +100,6 @@ const EditProject = () => {
   };
 
   const handleAuthorAdd = () => {
-    // For simplicity, we'll add a placeholder author. In a real app, you'd likely have a dropdown or input to select/add authors.
     setFormData((prev) => ({
       ...prev,
       author: [...prev.author, `Author ${prev.author.length + 1}`],
@@ -110,18 +108,16 @@ const EditProject = () => {
 
   const handleSave = () => {
     console.log("Saving form data:", formData);
-    // Add save logic here (e.g., API call)
-    navigate("/"); // Navigate back to the dashboard after saving
+    navigate("/");
   };
 
   const handleCancel = () => {
-    navigate("/"); // Navigate back to the dashboard on cancel
+    navigate("/");
   };
 
   return (
     <Box className="edit-project">
       <Box className="header">
-        {/* Left Section (Arrow + Text) */}
         <Box className="left-section">
           <IconButton onClick={() => navigate("/")}>
             <ArrowBackIcon />
@@ -129,14 +125,12 @@ const EditProject = () => {
           <Typography variant="h5">Edit Project Details</Typography>
         </Box>
 
-        {/* Right Button */}
         <Button variant="contained" className="export-button">
           Export to Excel
           <img src={excelIcon} alt="Export Excel" className="close-icon" />
         </Button>
       </Box>
 
-      {/* Manuscript Information Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Manuscript Information
@@ -163,7 +157,6 @@ const EditProject = () => {
             Description
           </Typography>
           <TextField
-            // label="Description"
             name="description"
             value={formData.description}
             onChange={handleChange}
@@ -219,15 +212,12 @@ const EditProject = () => {
         </Box>
       </Box>
 
-      {/* Project Details Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Project Details
         </Typography>
 
-        {/* First Row */}
         <Box className="row">
-          {/* Category */}
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
               Category
@@ -248,7 +238,6 @@ const EditProject = () => {
             </Select>
           </Box>
 
-          {/* Project Type */}
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
               Project Type
@@ -267,9 +256,7 @@ const EditProject = () => {
           </Box>
         </Box>
 
-        {/* Second Row */}
         <Box className="row">
-          {/* Region */}
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
               Region
@@ -288,7 +275,6 @@ const EditProject = () => {
             </Select>
           </Box>
 
-          {/* Language */}
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
               Language
@@ -308,9 +294,7 @@ const EditProject = () => {
           </Box>
         </Box>
 
-        {/* Third Row */}
         <Box className="row">
-          {/* Review Period */}
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
               Review Period
@@ -329,7 +313,6 @@ const EditProject = () => {
             </Select>
           </Box>
 
-          {/* Budget */}
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
               Budget
@@ -347,13 +330,11 @@ const EditProject = () => {
         </Box>
       </Box>
 
-      {/* Status & Dates Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Status & Dates
         </Typography>
 
-        {/* First Row: Date Pickers */}
         <Box className="row">
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
@@ -368,7 +349,7 @@ const EditProject = () => {
                     {...params}
                     fullWidth
                     variant="outlined"
-                    InputLabelProps={{ shrink: false }} // Disables floating label
+                    InputLabelProps={{ shrink: false }}
                   />
                 )}
               />
@@ -388,7 +369,7 @@ const EditProject = () => {
                     {...params}
                     fullWidth
                     variant="outlined"
-                    InputLabelProps={{ shrink: false }} // Disables floating label
+                    InputLabelProps={{ shrink: false }}
                   />
                 )}
               />
@@ -396,7 +377,6 @@ const EditProject = () => {
           </Box>
         </Box>
 
-        {/* Second Row: Status & Priority */}
         <Box className="row">
           <Box className="input-container">
             <Typography variant="subtitle1" className="label-title">
@@ -437,16 +417,13 @@ const EditProject = () => {
         </Box>
       </Box>
 
-      {/* Additional Options Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Additional Options
         </Typography>
         <Box className="row">
-          {/* Urgency Section */}
           <FormControl component="fieldset" sx={{ marginRight: 40 }}>
             {" "}
-            {/* Added margin */}
             <Typography variant="body1" className="option-label">
               Urgency
             </Typography>
@@ -462,7 +439,6 @@ const EditProject = () => {
             </RadioGroup>
           </FormControl>
 
-          {/* Open Source Section */}
           <FormControl component="fieldset">
             <Typography variant="body1" className="option-label">
               Open Source
@@ -480,7 +456,6 @@ const EditProject = () => {
           </FormControl>
         </Box>
 
-        {/* Priority Task Checkbox */}
         <FormControlLabel
           control={
             <Checkbox
@@ -493,7 +468,6 @@ const EditProject = () => {
         />
       </Box>
 
-      {/* Editor Note Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Editor Note
@@ -503,7 +477,6 @@ const EditProject = () => {
           Notes
         </Typography>
         <TextField
-          // label="Editor Note"
           name="editorNote"
           value={formData.editorNote}
           onChange={handleChange}
@@ -515,7 +488,6 @@ const EditProject = () => {
         />
       </Box>
 
-      {/* Instructions Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Instructions
@@ -525,7 +497,6 @@ const EditProject = () => {
           Instructions
         </Typography>
         <TextField
-          // label="Instructions"
           name="instructions"
           value={formData.instructions}
           onChange={handleChange}
@@ -537,12 +508,15 @@ const EditProject = () => {
         />
       </Box>
 
-      {/* Actions */}
       <Box className="actions">
-        <Button variant="outlined" onClick={handleCancel}>
+        <Button
+          variant="outlined"
+          className="cancel-btn"
+          onClick={handleCancel}
+        >
           Cancel
         </Button>
-        <Button variant="contained" onClick={handleSave}>
+        <Button variant="contained" className="save-btn"  onClick={handleSave}>
           Save
         </Button>
       </Box>

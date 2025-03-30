@@ -1,10 +1,10 @@
 @use "./variables" as *;
 
 .edit-project {
-    margin-left: 230px; // Match the sidebar width
+    margin-left: 230px;
     padding: 20px;
-    width: 80%; // Match the width from Dashboard.scss
-    max-width: calc(100% - 230px); // Ensure it fits within the remaining space
+    width: 80%;
+    max-width: calc(100% - 230px);
     box-sizing: border-box;
     font-family: $primary-font;
 
@@ -20,7 +20,7 @@
             gap: 8px;
 
             .MuiIconButton-root {
-                color: #0070B0; // Change this to any color
+                color: #0070B0; 
             }
         }
 
@@ -79,18 +79,15 @@
             line-height: 18px !important;
         }
 
-        // Consistent margin & padding for input fields
         .input-container {
             display: flex;
             flex-direction: column;
-            // width: 100%;
             width: calc(50% - 8px);
-            /* Each input takes half the row width */
             min-width: 250px;
 
             .MuiInputAdornment-root svg {
-                    color:#0070B0; // Change icon color inside TextField
-                }
+                color: #0070B0;
+            }
         }
 
         .row {
@@ -105,7 +102,6 @@
 
         }
 
-        // Matches Task Modal field height
         .MuiTextField-root,
         .MuiSelect-root {
             font-size: 14px !important;
@@ -115,55 +111,6 @@
             height: 40px !important;
             padding: 5px 10px !important;
         }
-
-        // .row {
-        //     display: flex;
-        //     gap: 16px;
-        //     margin-bottom: 8px;
-
-        //     .input-field {
-        //         flex: 1;
-
-        //         .MuiInputLabel-root {
-        //             color: #666;
-        //             font-size: 14px;
-        //             font-family: $primary-font;
-        //         }
-
-        //         .MuiInputBase-root {
-        //             font-size: 14px;
-        //             color: #00324E;
-        //             font-family: $primary-font;
-
-        //             &.MuiInput-underline {
-        //                 &:before {
-        //                     border-bottom: 1px solid #ddd; // Light gray underline
-        //                 }
-
-        //                 &:after {
-        //                     border-bottom: 2px solid #0070B0; // Blue underline on focus
-        //                 }
-        //             }
-
-        //             &.MuiOutlinedInput-root {
-        //                 border-radius: 8px;
-
-        //                 .MuiOutlinedInput-notchedOutline {
-        //                     border-color: #ddd; // Light gray border for multiline fields
-        //                 }
-
-        //                 &:hover .MuiOutlinedInput-notchedOutline {
-        //                     border-color: #0070B0; // Blue border on hover
-        //                 }
-
-        //                 &.Mui-focused .MuiOutlinedInput-notchedOutline {
-        //                     border-color: #0070B0; // Blue border on focus
-        //                     border-width: 2px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
 
         .author-branch {
             display: flex;
@@ -223,7 +170,7 @@
 
         .file-upload {
             .drop-zone {
-                border: 2px dashed #0070B0; // Thicker dashed border
+                border: 2px dashed #0070B0;
                 border-radius: 8px;
                 padding: 20px;
                 text-align: center;
@@ -236,7 +183,7 @@
                     font-family: $primary-font;
 
                     &:last-child {
-                        font-size: 12px; // Smaller font for the supported formats text
+                        font-size: 12px;
                     }
                 }
 
@@ -351,14 +298,48 @@
         .MuiButton-contained {
             background-color: #0070B0;
             color: #fff;
+        }
+    }
 
-            // &:hover {
-            //     background-color: darken(#0070B0, 10%);
-            // }
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px; 
+        gap: 12px;
+
+        .cancel-btn {
+            font-family: $primary-font !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            padding: 8px 16px !important;
+            border-radius: 6px !important;
+            color: #1A3D7D !important;
+            border: 1px solid #1A3D7D !important;
+            background-color: transparent !important;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.05) !important;
+            }
+        }
+
+        .save-btn {
+            font-family: $primary-font !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            padding: 8px 16px !important;
+            border-radius: 6px !important;
+            background-color: #1A3D7D !important;
+            color: #FFFFFF !important;
+
+            &:hover {
+                background-color: #1A3D7D !important;
+            }
         }
     }
 }
 
 .MuiSelect-icon {
-    color:  #0070B0 !important; // Change dropdown arrow color
+    color: #0070B0 !important;
 }

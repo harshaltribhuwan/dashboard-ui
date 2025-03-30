@@ -12,8 +12,8 @@ const CustomStackedBarChart = () => {
         height={200}
         data={stackedBarChartData}
         margin={{ top: 10, right: 20, left: 20, bottom: 20 }}
-        barSize={20} // ✅ Makes bars thinner
-        barCategoryGap="20%" // ✅ Increases space between bars
+        barSize={20}
+        barCategoryGap="20%"
       >
         <XAxis
           dataKey="month"
