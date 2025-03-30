@@ -12,11 +12,11 @@ import {
   Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import "../styles/Modal.scss";
+import "../../styles/Modal.scss";
 
 const TaskModal = ({ open, handleClose, task, onSave }) => {
   const [editedTask, setEditedTask] = React.useState(task);
-  const [author, setAuthor] = React.useState([]);
+  const [author, setAuthor] = React.useState(["Sarah Johnson"]);
   const [files, setFiles] = React.useState([]);
 
   useEffect(() => {
@@ -73,6 +73,8 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </Grid>
 
           {/* Author Section */}
+
+          {console.log(author)}
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
               Author
