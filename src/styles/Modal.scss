@@ -70,8 +70,6 @@
     display: flex;
     align-items: center; // Aligns text properly
     height: 40px; // Matches TextField input height
-
-
     font-weight: 400 !important;
     font-size: 12px !important;
     line-height: 18px !important;
@@ -94,13 +92,17 @@
 
 /* File Drop Area */
 .file-drop-area {
-    border: 2px dashed #b0b0b0;
+    font-family: $primary-font !important;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1%;
+    border: 2px dashed #94A3B8;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    background-color: #f9f9f9;
-    color: #7d7d7d;
-    min-height: 80px;
+    color: #00324E;
+    min-height: 50px;
     width: 100%;
 
     &:hover {
@@ -111,8 +113,12 @@
 
 /* File format info - Right-aligned and within container width */
 .file-format-info {
-    font-size: 12px;
-    color: gray;
+
+    font-family: $primary-font !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    font-size: 12px !important;
+    color: #1E293BBF !important;
     text-align: right;
     margin-top: 4px;
     width: 100%;
@@ -149,12 +155,43 @@
     color: #ff0000;
 }
 
-/* Modal Actions */
 .modal-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 10px; // Adds space between buttons
     margin-top: 20px; // Adjust spacing from the file upload section
+    gap: 12px;
+
+    .cancel-btn {
+        font-family: $primary-font !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-transform: none !important;
+        padding: 8px 16px !important;
+        border-radius: 6px !important;
+        color: #1A3D7D !important;
+        border: 1px solid #1A3D7D !important;
+        background-color: transparent !important;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+        }
+    }
+
+    // Style for the Save button
+    .save-btn {
+        font-family: $primary-font !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-transform: none !important;
+        padding: 8px 16px !important;
+        border-radius: 6px !important;
+        background-color: #1A3D7D !important;
+        color: #FFFFFF !important;
+
+        &:hover {
+            background-color: #1A3D7D !important;
+        }
+    }
 }
 
 .modal-box .MuiTextField-root {
@@ -172,7 +209,6 @@
 
 // Apply styling to all form elements inside the modal
 .modal-box {
-
     .MuiInputBase-input,
     .MuiSelect-select,
     .MuiChip-label,

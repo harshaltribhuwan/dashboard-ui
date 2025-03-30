@@ -108,20 +108,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               }}
               variant="outlined"
               label="" // Removes floating label
-              sx={{
-                fontFamily: `"Merriweather Sans", sans-serif`,
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "18px",
-                letterSpacing: "2%",
-                "& .MuiInputBase-input": {
-                  fontFamily: `"Merriweather Sans", sans-serif`,
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "18px",
-                  letterSpacing: "2%",
-                },
-              }}
             >
               {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
                 <MenuItem key={option} value={option}>
@@ -136,7 +122,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
         <Grid container spacing={2} className="modal-row">
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
-              Assigned To
+              Assigned to
             </Typography>
             <TextField
               name="assignedTo"
@@ -161,20 +147,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               onChange={handleChange}
               variant="outlined"
               label="" // Removes floating label
-              sx={{
-                fontFamily: `"Merriweather Sans", sans-serif`,
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "18px",
-                letterSpacing: "2%",
-                "& .MuiInputBase-input": {
-                  fontFamily: `"Merriweather Sans", sans-serif`,
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "18px",
-                  letterSpacing: "2%",
-                },
-              }}
             >
               <MenuItem value="In progress">In progress</MenuItem>
               <MenuItem value="To do">To do</MenuItem>
@@ -197,7 +169,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             <Typography>
               Drag and drop files here or{" "}
               <span
-                style={{ color: "blue", cursor: "pointer" }}
+                style={{ color: "#0070B0", cursor: "pointer" }}
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 browse files
@@ -236,11 +208,19 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
         </Box>
 
         {/* Modal Actions */}
-        <Box className="modal-actions" sx={{ display: "flex", gap: 2 }}>
-          <Button onClick={handleClose} variant="outlined">
+        <Box className="modal-actions">
+          <Button
+            onClick={handleClose}
+            variant="outlined"
+            className="cancel-btn"
+          >
             Cancel
           </Button>
-          <Button onClick={() => onSave(editedTask)} variant="contained">
+          <Button
+            onClick={() => onSave(editedTask)}
+            variant="contained"
+            className="save-btn"
+          >
             Save
           </Button>
         </Box>
