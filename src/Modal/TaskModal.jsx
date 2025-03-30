@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Modal,
   Box,
@@ -12,7 +12,6 @@ import {
   Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import DeleteIcon from "@mui/icons-material/Delete";
 import "../styles/Modal.scss";
 
 const TaskModal = ({ open, handleClose, task, onSave }) => {
@@ -20,7 +19,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
   const [author, setAuthor] = React.useState([]);
   const [files, setFiles] = React.useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setEditedTask(task);
   }, [task]);
 
@@ -66,19 +65,28 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
         </Box>
 
         {/* First Row: Manuscript & Author */}
-        <Grid container spacing={2} className="modal-row">
+        <Grid container spacing={2} alignItems="center" className="modal-row">
+          {/* Manuscript Section */}
           <Grid item xs={12} md={6}>
+            <Typography variant="subtitle1" className="section-title">
+              Manuscript
+            </Typography>
             <Typography className="manuscript-text">
               {editedTask?.manuscript || "N/A"}
             </Typography>
           </Grid>
+
+          {/* Author Section */}
           <Grid item xs={12} md={6}>
+            <Typography variant="subtitle1" className="section-title">
+              Author
+            </Typography>
             <TextField
               select
-              label="Author"
+              label="Select Author"
               name="author"
               fullWidth
-              margin="normal"
+              margin="dense"
               value={author}
               onChange={handleAuthorChange}
               SelectProps={{
@@ -108,8 +116,11 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
         {/* Second Row: Assigned To & Status */}
         <Grid container spacing={2} className="modal-row">
           <Grid item xs={12} md={6}>
+            <Typography variant="subtitle1" className="section-title">
+              Assigned To
+            </Typography>
             <TextField
-              label="Assigned To"
+              label="Enter Name"
               name="assignedTo"
               fullWidth
               margin="normal"
@@ -118,9 +129,12 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             />
           </Grid>
           <Grid item xs={12} md={6}>
+            <Typography variant="subtitle1" className="section-title">
+              Status
+            </Typography>
             <TextField
               select
-              label="Status"
+              label="Select Status"
               name="status"
               fullWidth
               margin="normal"
@@ -136,7 +150,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
 
         {/* Assigned To Section (File Upload) */}
         <Typography variant="subtitle1" className="section-title">
-          Assigned To
+          Upload Files
         </Typography>
         <Box className="file-upload-container">
           {/* File Drop Area */}

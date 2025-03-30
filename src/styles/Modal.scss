@@ -25,6 +25,14 @@
     color: #00324E;
 }
 
+/* Labels for all input fields, including Manuscript */
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
 /* Rows */
 .modal-row {
     display: flex;
@@ -37,53 +45,23 @@
     min-width: 300px;
 }
 
-.file-drop-area {
-    border: 2px dashed #b0b0b0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    margin-top: 16px;
-    min-height: 80px;
-    background-color: #f9f9f9;
-    color: #7d7d7d;
-    width: 50%;
-    /* Takes half the modal */
-
-    &:hover {
-        border-color: #00324E;
-        transition: border-color 0.3s;
-    }
-}
-
-/* File format info - Outside & Right-aligned */
-.file-format-info {
-    font-size: 14px;
-    color: #7d7d7d;
-    text-align: right;
-    margin-top: 8px;
-}
-
-.reset-files-btn {
-    color: #ff0000;
-}
-
-.uploaded-file {
+/* Manuscript Label & Text */
+.manuscript-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #fff;
-    margin-bottom: 4px;
+    flex-direction: column;
 }
 
-.modal-actions {
+.manuscript-text {
+    font-size: 16px;
+    color: #333; // Ensures proper text color
+    background: none; // Removes any gray background
+    padding: 6px 0; // Adds slight spacing for alignment
     display: flex;
-    justify-content: flex-end;
-    margin-top: 16px;
+    align-items: center; // Aligns text properly
+    height: 40px; // Matches TextField input height
 }
 
+/* File Upload Section */
 .file-upload-wrapper {
     display: flex;
     gap: 16px;
@@ -91,12 +69,13 @@
 }
 
 .file-upload-container {
-    width: 50%; // Keeps it 50% of modal width
+    width: 50%; // Takes half the modal width
     display: flex;
     flex-direction: column; // Stack elements vertically
     gap: 12px;
 }
 
+/* File Drop Area */
 .file-drop-area {
     border: 2px dashed #b0b0b0;
     border-radius: 8px;
@@ -106,8 +85,14 @@
     color: #7d7d7d;
     min-height: 80px;
     width: 100%;
+
+    &:hover {
+        border-color: #00324E;
+        transition: border-color 0.3s;
+    }
 }
 
+/* File format info - Right-aligned and within container width */
 .file-format-info {
     font-size: 12px;
     color: gray;
@@ -116,10 +101,12 @@
     width: 100%;
 }
 
+/* File Preview Section */
 .file-preview-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%; // Ensures it takes full modal width
 }
 
 .file-preview-header {
@@ -128,6 +115,7 @@
     width: 100%;
 }
 
+/* Uploaded file styling */
 .uploaded-file {
     padding: 8px;
     display: flex;
@@ -136,4 +124,17 @@
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: #fff;
+    margin-bottom: 4px;
+}
+
+.reset-files-btn {
+    color: #ff0000;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
 }
