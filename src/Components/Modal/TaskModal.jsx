@@ -69,8 +69,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             </Typography>
           </Grid>
 
-
-          {console.log(author)}
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
               Author
