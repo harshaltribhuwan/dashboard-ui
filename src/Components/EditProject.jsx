@@ -348,7 +348,6 @@ const EditProject = () => {
       </Box>
 
       {/* Status & Dates Section */}
-      {/* Status & Dates Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Status & Dates
@@ -444,7 +443,10 @@ const EditProject = () => {
           Additional Options
         </Typography>
         <Box className="row">
-          <FormControl component="fieldset">
+          {/* Urgency Section */}
+          <FormControl component="fieldset" sx={{ marginRight: 40 }}>
+            {" "}
+            {/* Added margin */}
             <Typography variant="body1" className="option-label">
               Urgency
             </Typography>
@@ -453,11 +455,14 @@ const EditProject = () => {
               name="urgency"
               value={formData.urgency}
               onChange={handleChange}
+              sx={{ gap: 5 }}
             >
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
+
+          {/* Open Source Section */}
           <FormControl component="fieldset">
             <Typography variant="body1" className="option-label">
               Open Source
@@ -467,12 +472,15 @@ const EditProject = () => {
               name="openSource"
               value={formData.openSource}
               onChange={handleChange}
+              sx={{ gap: 5 }}
             >
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
         </Box>
+
+        {/* Priority Task Checkbox */}
         <FormControlLabel
           control={
             <Checkbox
