@@ -9,14 +9,20 @@
     box-sizing: border-box;
     font-family: $primary-font;
 
-    .header {
+.header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 24px; // Slightly increased for better spacing
+        margin-bottom: 24px;
+
+        .left-section {
+            display: flex;
+            align-items: center; // Ensures arrow and text are aligned properly
+            gap: 8px; // Adds spacing between the icon and text
+        }
 
         h5 {
-            color: #00324E; // Dark blue for the title
+            color: #00324E;
             font-family: $primary-font;
             font-weight: 600;
             font-size: 20px;
@@ -32,15 +38,13 @@
             padding: 6px 12px;
             border-radius: 8px;
             font-family: $primary-font;
+            display: flex;
+            align-items: center;
 
             .close-icon {
                 margin-left: 8px;
                 font-size: 16px;
             }
-
-            // &:hover {
-            //     background-color: darken(#0070B0, 10%); // Slightly darker on hover
-            // }
         }
     }
 

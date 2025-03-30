@@ -1,6 +1,7 @@
 // src/components/EditProject.js
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import {
   Box,
   Typography,
@@ -68,6 +69,10 @@ const EditProject = () => {
     }
   }, [taskData]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!taskData) {
     return <h2>No task selected!</h2>;
   }
@@ -123,7 +128,15 @@ const EditProject = () => {
   return (
     <Box className="edit-project">
       <Box className="header">
-        <Typography variant="h5">Edit Project Details</Typography>
+        {/* Left Section (Arrow + Text) */}
+        <Box className="left-section">
+          <IconButton onClick={() => navigate("/")}>
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography variant="h5">Edit Project Details</Typography>
+        </Box>
+
+        {/* Right Button */}
         <Button variant="contained" className="export-button">
           Export to Excel
           <CloseIcon className="close-icon" />
