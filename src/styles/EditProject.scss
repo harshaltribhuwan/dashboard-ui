@@ -52,7 +52,7 @@
     }
 
     .section {
-        border-radius: var(--radius-lg, 8px); 
+        border-radius: var(--radius-lg, 8px);
         border: 0.5px solid var(--colors-neutral-400, #94A3B8);
         padding: var(--gap-md, 16px) 12px;
         color: #FFFFFF;
@@ -74,43 +74,43 @@
         .label-title {
             color: #0070B0;
             margin-bottom: 4px !important;
-            font-weight: 400 !important;
+            font-weight: 500 !important;
             font-size: 12px !important;
             line-height: 18px !important;
         }
 
-                // Consistent margin & padding for input fields
-                .input-container {
-                    display: flex;
-                    flex-direction: column;
-                    // width: 100%;
-                    width: calc(50% - 8px);
-                        /* Each input takes half the row width */
-                        min-width: 250px;
-                }
-        
-                .row {
-                    display: flex;
-                    gap: 16px;
-                    flex-wrap: wrap;
+        // Consistent margin & padding for input fields
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            // width: 100%;
+            width: calc(50% - 8px);
+            /* Each input takes half the row width */
+            min-width: 250px;
+        }
 
-                    .input-field {
-                     flex: 1;
-                    min-width: 0;
-                    }
+        .row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
 
-                }
-        
-                // Matches Task Modal field height
-                .MuiTextField-root,
-                .MuiSelect-root {
-                    font-size: 14px !important;
-                }
-        
-                .MuiInputBase-root {
-                    height: 40px !important;
-                    padding: 5px 10px !important;
-                }
+            .input-field {
+                flex: 1;
+                min-width: 0;
+            }
+
+        }
+
+        // Matches Task Modal field height
+        .MuiTextField-root,
+        .MuiSelect-root {
+            font-size: 14px !important;
+        }
+
+        .MuiInputBase-root {
+            height: 40px !important;
+            padding: 5px 10px !important;
+        }
 
         // .row {
         //     display: flex;

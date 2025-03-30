@@ -347,70 +347,83 @@ const EditProject = () => {
       </Box>
 
       {/* Status & Dates Section */}
+      {/* Status & Dates Section */}
       <Box className="section">
         <Typography variant="h6" className="section-title">
           Status & Dates
         </Typography>
+
+        {/* First Row: Date Pickers */}
         <Box className="row">
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DatePicker
-              // label="Due on"
-              value={formData.due}
-              onChange={(date) => handleDateChange("due", date)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  fullWidth
-                  margin="normal"
-                  className="input-field"
-                />
-              )}
-            />
-          </LocalizationProvider>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DatePicker
-              // label="Publish on"
-              value={formData.publishDate}
-              onChange={(date) => handleDateChange("publishDate", date)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  fullWidth
-                  margin="normal"
-                  className="input-field"
-                />
-              )}
-            />
-          </LocalizationProvider>
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Due On
+            </Typography>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                value={formData.due}
+                onChange={(date) => handleDateChange("due", date)}
+                renderInput={(params) => (
+                  <TextField {...params} fullWidth variant="outlined" />
+                )}
+              />
+            </LocalizationProvider>
+          </Box>
+
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Publish On
+            </Typography>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                value={formData.publishDate}
+                onChange={(date) => handleDateChange("publishDate", date)}
+                renderInput={(params) => (
+                  <TextField {...params} fullWidth variant="outlined" />
+                )}
+              />
+            </LocalizationProvider>
+          </Box>
         </Box>
+
+        {/* Second Row: Status & Priority */}
         <Box className="row">
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Status Update</InputLabel>
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Status Update
+            </Typography>
             <Select
               name="status"
               value={formData.status}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="Under review">Under review</MenuItem>
               <MenuItem value="In progress">In progress</MenuItem>
               <MenuItem value="To-do">To-do</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
             </Select>
-          </FormControl>
-          <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Priority</InputLabel>
+          </Box>
+
+          <Box className="input-container">
+            <Typography variant="subtitle1" className="label-title">
+              Priority
+            </Typography>
             <Select
               name="priority"
               value={formData.priority}
               onChange={handleChange}
               displayEmpty
+              fullWidth
+              variant="outlined"
             >
               <MenuItem value="High">High</MenuItem>
               <MenuItem value="Medium">Medium</MenuItem>
               <MenuItem value="Low">Low</MenuItem>
             </Select>
-          </FormControl>
+          </Box>
         </Box>
       </Box>
 
