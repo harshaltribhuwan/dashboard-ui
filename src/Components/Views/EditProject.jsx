@@ -171,7 +171,7 @@ const EditProject = () => {
         </Box>
         <Box className="author-branch">
           <Box className="author-field">
-            <Typography variant="subtitle1" className="label-title">
+            <Typography variant="subtitle1" className="label-title autor-content">
               Author
             </Typography>
             <TextField

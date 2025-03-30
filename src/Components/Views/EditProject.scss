@@ -72,6 +72,7 @@
         }
 
         .label-title {
+            font-family: $primary-font !important;
             color: #0070B0;
             margin-bottom: 4px !important;
             font-weight: 500 !important;
@@ -109,7 +110,7 @@
 
         .MuiInputBase-root {
             height: 40px !important;
-            padding: 5px 10px !important;
+            padding: 5px 5px !important;
         }
 
         .author-branch {
@@ -119,6 +120,7 @@
             .author-field {
                 flex: 1;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
 
                 .author-list {
