@@ -15,6 +15,7 @@ import {
   Checkbox,
   Button,
   IconButton,
+  Chip,
 } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -22,7 +23,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 import CloseIcon from "@mui/icons-material/Close";
 import "./EditProject.scss";
-import excelIcon from "../../assets/file-excel-line.svg?url";
+import excelIcon from "../../assets/excel.svg?url";
 
 const EditProject = () => {
   const location = useLocation();
@@ -99,10 +100,11 @@ const EditProject = () => {
     }));
   };
 
-  const handleAuthorAdd = () => {
+  const handleAuthorChange = (e) => {
+    const { value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      author: [...prev.author, `Author ${prev.author.length + 1}`],
+      author: typeof value === "string" ? value.split(",") : value,
     }));
   };
 
@@ -172,27 +174,38 @@ const EditProject = () => {
             <Typography variant="subtitle1" className="label-title">
               Author
             </Typography>
-            <Box className="author-list">
-              {formData.author.map((author, index) => (
-                <Box key={index} className="author-chip">
-                  {author}
-                  <IconButton
-                    size="small"
-                    onClick={() => handleAuthorRemove(author)}
-                  >
-                    <CloseIcon fontSize="small" />
-                  </IconButton>
-                </Box>
+            <TextField
+              select
+              name="author"
+              fullWidth
+              margin="dense"
+              value={formData.author}
+              onChange={handleAuthorChange}
+              SelectProps={{
+                multiple: true,
+                renderValue: (selected) => (
+                  <Box className="author-list">
+                    {selected.map((value) => (
+                      <Chip
+                        key={value}
+                        label={value}
+                        onDelete={() => handleAuthorRemove(value)}
+                        className="author-chip"
+                      />
+                    ))}
+                  </Box>
+                ),
+              }}
+              variant="outlined"
+              className="input-field"
+              label=""
+            >
+              {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
+                <MenuItem key={option} value={option}>
+                  {option}
+                </MenuItem>
               ))}
-              <Button
-                variant="outlined"
-                size="small"
-                onClick={handleAuthorAdd}
-                className="add-author"
-              >
-                +
-              </Button>
-            </Box>
+            </TextField>
           </Box>
           <FormControl fullWidth margin="normal" className="input-field">
             <Typography variant="subtitle1" className="label-title">
@@ -516,7 +529,7 @@ const EditProject = () => {
         >
           Cancel
         </Button>
-        <Button variant="contained" className="save-btn"  onClick={handleSave}>
+        <Button variant="contained" className="save-btn" onClick={handleSave}>
           Save
         </Button>
       </Box>
