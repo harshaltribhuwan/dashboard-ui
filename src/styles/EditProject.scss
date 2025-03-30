@@ -17,12 +17,23 @@
 
         .left-section {
             display: flex;
-            align-items: center; // Ensures arrow and text are aligned properly
-            gap: 8px; // Adds spacing between the icon and text
+            align-items: center; 
+            gap: 8px; 
+
+            .MuiIconButton-root {
+                    color: #0070B0; // Change this to any color
+                }
         }
 
         h5 {
-            color: #00324E;
+            font-family: $primary-font !important;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                letter-spacing: 0%;
+
+
+            color: #000000;
             font-family: $primary-font;
             font-weight: 600;
             font-size: 20px;
@@ -31,10 +42,11 @@
         }
 
         .export-button {
-            background-color: #0070B0;
-            color: #fff;
+            background-color: #1A3D7D;
+            color: #FFFFFF;
             text-transform: none;
             font-size: 14px;
+            font-weight: 400;
             padding: 6px 12px;
             border-radius: 8px;
             font-family: $primary-font;

@@ -22,6 +22,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import CloseIcon from "@mui/icons-material/Close";
 import "../styles/EditProject.scss";
+import excelIcon from "../assets/file-excel-line.svg?url";
 
 const EditProject = () => {
   const location = useLocation();
@@ -139,7 +140,7 @@ const EditProject = () => {
         {/* Right Button */}
         <Button variant="contained" className="export-button">
           Export to Excel
-          <CloseIcon className="close-icon" />
+          <img src={excelIcon} alt="Export Excel" className="close-icon" />
         </Button>
       </Box>
 
