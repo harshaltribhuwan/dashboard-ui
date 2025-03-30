@@ -141,7 +141,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               value={editedTask?.status || ""}
               onChange={handleChange}
             >
-              <MenuItem value="In Progress">In Progress</MenuItem>
+              <MenuItem value="In progress">In progress</MenuItem>
               <MenuItem value="To do">To do</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
             </TextField>
@@ -150,7 +150,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
 
         {/* Assigned To Section (File Upload) */}
         <Typography variant="subtitle1" className="section-title">
-          Upload Files
+          Assigned to
         </Typography>
         <Box className="file-upload-container">
           {/* File Drop Area */}
