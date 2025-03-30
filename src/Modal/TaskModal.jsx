@@ -49,13 +49,9 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
     setFiles(files.filter((f) => f !== file));
   };
 
-  const handleResetFiles = () => {
-    setFiles([]);
-  };
-
   return (
     <Modal open={open} onClose={handleClose}>
-      <Box className="modal-box">
+      <Box className="modal-box" sx={{ fontFamily: "inherit" }}>
         {/* Header */}
         <Box className="modal-header">
           <Typography variant="h6">Task Actions</Typography>
@@ -83,7 +79,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             </Typography>
             <TextField
               select
-              label="Select Author"
               name="author"
               fullWidth
               margin="dense"
@@ -98,10 +93,34 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
                         key={value}
                         label={value}
                         onDelete={() => handleRemoveFile(value)}
+                        sx={{
+                          backgroundColor: "#F1F5F9", // Custom background color
+                          color: "#0070B0", // Custom text color
+                          fontWeight: "bold",
+                          "& .MuiChip-deleteIcon": {
+                            color: "#0070B0", // Custom delete icon color
+                          },
+                        }}
                       />
                     ))}
                   </div>
                 ),
+              }}
+              variant="outlined"
+              label="" // Removes floating label
+              sx={{
+                fontFamily: `"Merriweather Sans", sans-serif`,
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "18px",
+                letterSpacing: "2%",
+                "& .MuiInputBase-input": {
+                  fontFamily: `"Merriweather Sans", sans-serif`,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "18px",
+                  letterSpacing: "2%",
+                },
               }}
             >
               {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
@@ -120,12 +139,13 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               Assigned To
             </Typography>
             <TextField
-              label="Enter Name"
               name="assignedTo"
               fullWidth
-              margin="normal"
+              margin="dense"
               value={editedTask?.assignedTo || ""}
               onChange={handleChange}
+              variant="outlined"
+              label="" // Removes floating label
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -134,12 +154,27 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             </Typography>
             <TextField
               select
-              label="Select Status"
               name="status"
               fullWidth
-              margin="normal"
+              margin="dense"
               value={editedTask?.status || ""}
               onChange={handleChange}
+              variant="outlined"
+              label="" // Removes floating label
+              sx={{
+                fontFamily: `"Merriweather Sans", sans-serif`,
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "18px",
+                letterSpacing: "2%",
+                "& .MuiInputBase-input": {
+                  fontFamily: `"Merriweather Sans", sans-serif`,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "18px",
+                  letterSpacing: "2%",
+                },
+              }}
             >
               <MenuItem value="In progress">In progress</MenuItem>
               <MenuItem value="To do">To do</MenuItem>
@@ -185,15 +220,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           {/* File Preview (Below the upload area) */}
           {files.length > 0 && (
             <Box className="file-preview-container">
-              <Box className="file-preview-header">
-                <Typography variant="subtitle1">Uploaded Files</Typography>
-                <IconButton
-                  onClick={handleResetFiles}
-                  className="reset-files-btn"
-                >
-                  <CloseIcon />
-                </IconButton>
-              </Box>
               {files.map((file, index) => (
                 <Paper key={index} className="uploaded-file">
                   {file.name}
@@ -210,7 +236,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
         </Box>
 
         {/* Modal Actions */}
-        <Box className="modal-actions">
+        <Box className="modal-actions" sx={{ display: "flex", gap: 2 }}>
           <Button onClick={handleClose} variant="outlined">
             Cancel
           </Button>

@@ -1,16 +1,24 @@
 @use "./variables" as *;
 
 .modal-box {
-    background: #fff;
+    background: #FFFFFF;
     border-radius: 12px;
     padding: 24px;
     max-width: 800px;
     margin: auto;
     position: relative;
     top: 20%;
-    font-family: $primary-font;
+    font-family: $primary-font !important;
     display: flex;
     flex-direction: column;
+}
+
+.modal-box {
+    font-family: $primary-font !important;
+}
+
+.modal-box * {
+    font-family: inherit !important;
 }
 
 /* Header */
@@ -18,7 +26,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 .close-btn {
@@ -27,10 +38,11 @@
 
 /* Labels for all input fields, including Manuscript */
 .section-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 4px;
+    color: #0070B0;
+    margin-bottom: 4px !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
 }
 
 /* Rows */
@@ -52,13 +64,18 @@
 }
 
 .manuscript-text {
-    font-size: 16px;
-    color: #333; // Ensures proper text color
+    color: #00324E !important; // Ensures proper text color
     background: none; // Removes any gray background
     padding: 6px 0; // Adds slight spacing for alignment
     display: flex;
     align-items: center; // Aligns text properly
     height: 40px; // Matches TextField input height
+
+
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    vertical-align: middle !important;
 }
 
 /* File Upload Section */
@@ -72,7 +89,7 @@
     width: 50%; // Takes half the modal width
     display: flex;
     flex-direction: column; // Stack elements vertically
-    gap: 12px;
+    gap: 5px;
 }
 
 /* File Drop Area */
@@ -136,5 +153,45 @@
 .modal-actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 16px;
+    gap: 10px; // Adds space between buttons
+    margin-top: 20px; // Adjust spacing from the file upload section
+}
+
+.modal-box .MuiTextField-root {
+    font-size: 14px; // Smaller font size
+}
+
+.modal-box .MuiInputBase-root {
+    height: 40px; // Reduce input height
+    padding: 5px 10px; // Adjust padding
+}
+
+.modal-box .MuiSelect-select {
+    padding: 8px 12px; // Adjust select dropdown padding
+}
+
+// Apply styling to all form elements inside the modal
+.modal-box {
+
+    .MuiInputBase-input,
+    .MuiSelect-select,
+    .MuiChip-label,
+    .uploaded-file {
+        // For file preview
+        font-family: $primary-font !important;
+        font-weight: 400 !important;
+        font-size: 12px !important;
+        line-height: 18px !important;
+        letter-spacing: 2% !important;
+        vertical-align: middle !important;
+    }
+}
+
+// Apply styles to the dropdown menu items
+.MuiMenuItem-root {
+    font-family: $primary-font !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    letter-spacing: 2% !important;
 }
