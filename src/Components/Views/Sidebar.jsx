@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemText } from "@mui/material";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
-import "../styles/Sidebar.scss";
+import "./Sidebar.scss";
 
 const Sidebar = () => {
   return (

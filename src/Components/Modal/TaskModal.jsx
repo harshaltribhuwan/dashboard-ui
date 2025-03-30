@@ -12,7 +12,7 @@ import {
   Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import "../../styles/Modal.scss";
+import "./Modal.scss";
 
 const TaskModal = ({ open, handleClose, task, onSave }) => {
   const [editedTask, setEditedTask] = React.useState(task);

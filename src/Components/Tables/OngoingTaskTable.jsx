@@ -12,7 +12,7 @@ import {
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import TaskModal from "../Modal/TaskModal";
 import { ongoingTasksData } from "../Data/mockData.js";
-import "../../styles/Table.scss";
+import "./Table.scss";
 
 const OngoingTasksTable = () => {
   const [open, setOpen] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import { pieChartData } from "../Data/mockData.js";
-import "../../styles/Charts.scss";
+import "./Charts.scss";
 
 // const COLORS = ["#00324E", "#F8FAFC", "#94A3B8", "#0070B0"]; original colors
 const COLORS = ["#00324E", "#005A87", "#94A3B8", "#0070B0"];

@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "../../styles/variables.scss" as *;
 
 .sidebar {
   position: fixed;
@@ -58,6 +58,6 @@
 
   .sidebar-divider {
     margin: 8px 0;
-    background-color: #B0BEC5;
+    background-color: #94A3B8;
   }
 }

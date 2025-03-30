@@ -21,8 +21,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 import CloseIcon from "@mui/icons-material/Close";
-import "../styles/EditProject.scss";
-import excelIcon from "../assets/file-excel-line.svg?url";
+import "./EditProject.scss";
+import excelIcon from "../../assets/file-excel-line.svg?url";
 
 const EditProject = () => {
   const location = useLocation();

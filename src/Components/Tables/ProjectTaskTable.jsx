@@ -12,7 +12,7 @@ import {
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { projectTasksData } from "../Data/mockData.js";
 import { useNavigate } from "react-router-dom";
-import "../../styles/Table.scss";
+import "./Table.scss";
 
 const ProjectTasksTable = () => {
   const navigate = useNavigate();
