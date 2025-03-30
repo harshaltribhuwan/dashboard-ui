@@ -54,7 +54,7 @@
     .section {
         border-radius: var(--radius-lg, 8px);
         border: 0.5px solid var(--colors-neutral-400, #94A3B8);
-        padding: var(--gap-md, 16px) 12px;
+        padding: var(--gap-md, 16px) 15px;
         color: #FFFFFF;
         display: flex;
         flex-direction: column;
@@ -87,6 +87,10 @@
             width: calc(50% - 8px);
             /* Each input takes half the row width */
             min-width: 250px;
+
+            .MuiInputAdornment-root svg {
+                    color:#0070B0; // Change icon color inside TextField
+                }
         }
 
         .row {
@@ -299,7 +303,7 @@
 
             .MuiTypography-root {
                 font-size: 14px;
-                color: #00324E;
+                color: #0070B0;
                 font-family: $primary-font;
             }
         }
@@ -353,4 +357,8 @@
             // }
         }
     }
+}
+
+.MuiSelect-icon {
+    color:  #0070B0 !important; // Change dropdown arrow color
 }
