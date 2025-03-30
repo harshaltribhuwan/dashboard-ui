@@ -1,19 +1,40 @@
-import { Link } from "react-router-dom";
-import './dashboard.scss';
+import React from "react";
+import LineChart from "./Charts/LineChart";
+import PieChart from "./Charts/PieChart";
+import StackedBarChart from "./Charts/StackedBarChart.jsx";
+import OngoingTasksTable from "./OngoingTaskTable";
+import ProjectTasksTable from "./ProjectTaskTable.jsx";
+import "../styles/Dashboard.scss";
 
 const Dashboard = () => {
   return (
-    <div className='dashboard-container'>
-      <h3>Dashboard File</h3>
-      <Link to="/editdashboard">Go to Edit Dashboard</Link>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, sed! Eos
-        minus aliquam eius illum, voluptatibus harum accusamus, omnis nobis,
-        impedit facilis tempora corrupti temporibus delectus vitae ab
-        repellendus doloribus. Labore maiores quos molestias deserunt velit,
-        rerum nostrum illum id explicabo aliquam nesciunt eos recusandae alias
-        dolores qui sit? Rerum.
-      </p>
+    <div className="dashboard">
+      <div className="header">
+        <h2>Hi Ted!</h2>
+      </div>
+      <div className="charts">
+        <div className="line-chart">
+          <LineChart />
+        </div>
+        <div className="pie-chart">
+          <PieChart />
+        </div>
+        <div className="bar-chart">
+          <StackedBarChart />
+        </div>
+      </div>
+
+      <div className="heading-container">
+        <h4 className="table-heading">Ongoing tasks</h4>
+      </div>
+
+      <OngoingTasksTable />
+
+      <div>
+        <h4 className="table-heading">Project Tasks</h4>
+      </div>
+
+      <ProjectTasksTable />
     </div>
   );
 };

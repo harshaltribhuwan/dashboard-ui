@@ -1,17 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import './App.css'
-import Dashboard from './Components/Dashboard';
-import EditDashboard from "./Components/EditDashboard/EditDashboard";
-
+import React from "react";
+import Sidebar from "./Components/Sidebar.jsx";
+import Dashboard from "./Components/Dashboard.jsx";
+import "./App.scss";
 
 function App() {
-
   return (
-    <Routes>
-    <Route path="/" element={<Dashboard />} />
-    <Route path="/editdashboard" element={<EditDashboard />} />
-  </Routes>
-  )
+    <div className="App">
+      <Sidebar />
+      <Dashboard />
+    </div>
+  );
 }
 
-export default App
+export default App;
