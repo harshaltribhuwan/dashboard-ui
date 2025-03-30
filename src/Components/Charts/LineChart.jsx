@@ -1,6 +1,6 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import { lineChartData } from "../mockData";
+import { lineChartData } from "../Data/mockData";
 import "../../styles/Charts.scss";
 
 const CustomLineChart = () => {

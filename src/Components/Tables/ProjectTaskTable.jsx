@@ -10,9 +10,9 @@ import {
   IconButton,
 } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import { projectTasksData } from "./mockData.js";
+import { projectTasksData } from "../Data/mockData.js";
 import { useNavigate } from "react-router-dom";
-import "../styles/Table.scss";
+import "../../styles/Table.scss";
 
 const ProjectTasksTable = () => {
   const navigate = useNavigate();

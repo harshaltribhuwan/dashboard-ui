@@ -10,9 +10,9 @@ import {
   IconButton,
 } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import TaskModal from "./Modal/TaskModal";
-import { ongoingTasksData } from "./mockData.js";
-import "../styles/Table.scss";
+import TaskModal from "../Modal/TaskModal";
+import { ongoingTasksData } from "../Data/mockData.js";
+import "../../styles/Table.scss";
 
 const OngoingTasksTable = () => {
   const [open, setOpen] = useState(false);
