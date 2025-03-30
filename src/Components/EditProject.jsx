@@ -140,7 +140,24 @@ const EditProject = () => {
         <Typography variant="h6" className="section-title">
           Manuscript Information
         </Typography>
-        <TextField
+
+        <Typography variant="subtitle1" className="label-title">
+          Manuscript Name
+        </Typography>
+
+        <Box>
+          <TextField
+            name="manuscriptName"
+            fullWidth
+            margin="dense"
+            value={formData.manuscriptName}
+            onChange={handleChange}
+            variant="outlined"
+            className="input-field"
+            label="" // Removes floating label
+          />
+        </Box>
+        {/* <TextField
           // label="Manuscript Name"
           name="manuscriptName"
           value={formData.manuscriptName}
@@ -148,20 +165,28 @@ const EditProject = () => {
           fullWidth
           margin="normal"
           className="input-field"
-        />
-        <TextField
-          // label="Description"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
-          multiline
-          rows={3}
-          className="input-field"
-        />
+        /> */}
+        <Box>
+          <Typography variant="subtitle1" className="label-title">
+            Description
+          </Typography>
+          <TextField
+            // label="Description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
+            multiline
+            rows={3}
+            className="input-field"
+          />
+        </Box>
         <Box className="author-branch">
           <Box className="author-field">
+            <Typography variant="subtitle1" className="label-title">
+              Author
+            </Typography>
             <Box className="author-list">
               {formData.author.map((author, index) => (
                 <Box key={index} className="author-chip">
@@ -185,7 +210,9 @@ const EditProject = () => {
             </Box>
           </Box>
           <FormControl fullWidth margin="normal" className="input-field">
-            <InputLabel>Branch</InputLabel>
+            <Typography variant="subtitle1" className="label-title">
+              Branch
+            </Typography>
             <Select
               name="branch"
               value={formData.branch}
