@@ -120,145 +120,150 @@ const EditProject = () => {
   };
 
   return (
-    <Box className='edit-project'>
-      <Box className='header'>
-        <Box className='left-section'>
+    <Box className="edit-project">
+      <Box className="header">
+        <Box className="left-section">
           <IconButton
-            onClick={() => navigate('/')}
-            aria-label='Go back to the homepage'
+            onClick={() => navigate("/")}
+            aria-label="Go back to the homepage"
           >
             <ArrowBackIcon />
           </IconButton>
-          <Typography variant='h5' role='heading' aria-level='1'>
+          <Typography variant="h5" role="heading" aria-level="1">
             Edit Project Details
           </Typography>
         </Box>
 
         <Button
-          variant='contained'
-          className='export-button'
-          aria-label='Export project details to Excel'
+          variant="contained"
+          className="export-button"
+          aria-label="Export project details to Excel"
         >
           Export to Excel
           <img
             src={excelIcon}
-            alt=''
-            className='close-icon'
-            aria-hidden='true'
+            alt=""
+            className="close-icon"
+            aria-hidden="true"
           />
         </Button>
       </Box>
 
-      <Box className='section'>
+      <Box className="section">
         <Typography
-          variant='h6'
-          className='section-title'
-          role='heading'
-          aria-level='2'
+          variant="h6"
+          className="section-title"
+          role="heading"
+          aria-level="2"
         >
           Manuscript Information
         </Typography>
 
         {/* Manuscript Name Field */}
         <Typography
-          variant='subtitle1'
-          className='label-title'
-          id='manuscript-name-label'
+          variant="subtitle1"
+          className="label-title"
+          id="manuscript-name-label"
         >
           Manuscript Name
         </Typography>
         <Box>
           <TextField
-            name='manuscriptName'
+            name="manuscriptName"
             fullWidth
             value={formData.manuscriptName}
             onChange={handleChange}
-            variant='outlined'
+            variant="outlined"
             row={2}
-            className='input-field'
-            aria-labelledby='manuscript-name-label'
+            className="input-field"
+            aria-labelledby="manuscript-name-label"
           />
         </Box>
 
         {/* Description Field */}
         <Box>
           <Typography
-            variant='subtitle1'
-            className='label-title'
-            id='description-label'
+            variant="subtitle1"
+            className="label-title"
+            id="description-label"
           >
             Description
           </Typography>
           <TextField
-            name='description'
+            name="description"
             value={formData.description}
             onChange={handleChange}
             fullWidth
             multiline
             rows={3}
-            variant='outlined'
-            className='input-field description-input'
-            aria-labelledby='description-label'
-            aria-describedby='description-hint'
+            variant="outlined"
+            className="input-field description-input"
+            aria-labelledby="description-label"
+            aria-describedby="description-hint"
+            sx={{
+              "& .MuiInputBase-root textarea": {
+                resize: "none",
+              },
+            }}
           />
         </Box>
 
-        <Box className='author-branch'>
-          <Box className='author-field'>
+        <Box className="author-branch">
+          <Box className="author-field">
             <Typography
-              variant='subtitle1'
-              className='label-title author-label'
-              id='author-label'
+              variant="subtitle1"
+              className="label-title author-label"
+              id="author-label"
             >
               Author
             </Typography>
             <TextField
               select
-              name='author'
+              name="author"
               fullWidth
               value={formData.author}
               onChange={handleAuthorChange}
-              aria-labelledby='author-label'
+              aria-labelledby="author-label"
               SelectProps={{
                 multiple: true,
                 IconComponent: () => (
                   <img
                     src={addIcon}
-                    alt=''
-                    aria-hidden='true'
+                    alt=""
+                    aria-hidden="true"
                     style={{ width: 12, height: 12, marginRight: 8 }}
                   />
                 ),
                 renderValue: (selected) => (
-                  <Box className='author-list'>
+                  <Box className="author-list">
                     {selected.map((value) => (
                       <Chip
                         key={value}
                         label={value}
                         onDelete={() => handleAuthorRemove(value)}
-                        className='author-chip'
+                        className="author-chip"
                         deleteIcon={
                           <img
                             src={ClosedIcon}
-                            alt='Remove author'
-                            style={{ width: 16, height: 16, cursor: 'pointer' }}
+                            alt="Remove author"
+                            style={{ width: 16, height: 16, cursor: "pointer" }}
                           />
                         }
                         sx={{
-                          backgroundColor: '#F1F5F9',
-                          color: '#0070B0',
-                          fontWeight: 'bold',
-                          padding: '4px 12px'
+                          backgroundColor: "#F1F5F9",
+                          color: "#0070B0",
+                          fontWeight: "bold",
+                          padding: "4px 12px",
                         }}
                       />
                     ))}
                   </Box>
-                )
+                ),
               }}
-              variant='outlined'
-              className='input-field author-input'
+              variant="outlined"
+              className="input-field author-input"
             >
-              {['Sarah Johnson', 'John Doe', 'Jane Smith'].map((option) => (
+              {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
                 <MenuItem key={option} value={option}>
                   {option}
                 </MenuItem>
@@ -267,287 +272,287 @@ const EditProject = () => {
           </Box>
 
           {/* Branch Dropdown */}
-          <FormControl fullWidth margin='normal' className='input-field'>
+          <FormControl fullWidth margin="normal" className="input-field">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='branch-label'
+              variant="subtitle1"
+              className="label-title"
+              id="branch-label"
             >
               Branch
             </Typography>
             <Select
-              name='branch'
+              name="branch"
               value={formData.branch}
               onChange={handleChange}
               displayEmpty
-              aria-labelledby='branch-label'
+              aria-labelledby="branch-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='Biotechnology'>Biotechnology</MenuItem>
-              <MenuItem value='Physics'>Physics</MenuItem>
-              <MenuItem value='Chemistry'>Chemistry</MenuItem>
+              <MenuItem value="Biotechnology">Biotechnology</MenuItem>
+              <MenuItem value="Physics">Physics</MenuItem>
+              <MenuItem value="Chemistry">Chemistry</MenuItem>
             </Select>
           </FormControl>
         </Box>
       </Box>
 
-      <Box className='section'>
+      <Box className="section">
         <Typography
-          variant='h6'
-          className='section-title'
-          role='heading'
-          aria-level='2'
+          variant="h6"
+          className="section-title"
+          role="heading"
+          aria-level="2"
         >
           Project Details
         </Typography>
 
-        <Box className='row'>
-          <Box className='input-container'>
+        <Box className="row">
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='category-label'
+              variant="subtitle1"
+              className="label-title"
+              id="category-label"
             >
               Category
             </Typography>
             <Select
-              name='category'
+              name="category"
               value={formData.category}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='category-label'
+              variant="outlined"
+              aria-labelledby="category-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='Content Review'>Content Review</MenuItem>
-              <MenuItem value='Manuscript Screening'>
+              <MenuItem value="Content Review">Content Review</MenuItem>
+              <MenuItem value="Manuscript Screening">
                 Manuscript Screening
               </MenuItem>
-              <MenuItem value='PRA'>PRA</MenuItem>
+              <MenuItem value="PRA">PRA</MenuItem>
             </Select>
           </Box>
 
-          <Box className='input-container'>
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='project-type-label'
+              variant="subtitle1"
+              className="label-title"
+              id="project-type-label"
             >
               Project Type
             </Typography>
             <Select
-              name='projectType'
+              name="projectType"
               value={formData.projectType}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='project-type-label'
+              variant="outlined"
+              aria-labelledby="project-type-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='New Submission'>New Submission</MenuItem>
-              <MenuItem value='Resubmission'>Resubmission</MenuItem>
+              <MenuItem value="New Submission">New Submission</MenuItem>
+              <MenuItem value="Resubmission">Resubmission</MenuItem>
             </Select>
           </Box>
         </Box>
 
-        <Box className='row'>
-          <Box className='input-container'>
+        <Box className="row">
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='region-label'
+              variant="subtitle1"
+              className="label-title"
+              id="region-label"
             >
               Region
             </Typography>
             <Select
-              name='region'
+              name="region"
               value={formData.region}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='region-label'
+              variant="outlined"
+              aria-labelledby="region-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='Asia'>Asia</MenuItem>
-              <MenuItem value='Europe'>Europe</MenuItem>
-              <MenuItem value='North America'>North America</MenuItem>
+              <MenuItem value="Asia">Asia</MenuItem>
+              <MenuItem value="Europe">Europe</MenuItem>
+              <MenuItem value="North America">North America</MenuItem>
             </Select>
           </Box>
 
-          <Box className='input-container'>
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='language-label'
+              variant="subtitle1"
+              className="label-title"
+              id="language-label"
             >
               Language
             </Typography>
             <Select
-              name='language'
+              name="language"
               value={formData.language}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='language-label'
+              variant="outlined"
+              aria-labelledby="language-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='English'>English</MenuItem>
-              <MenuItem value='Spanish'>Spanish</MenuItem>
-              <MenuItem value='French'>French</MenuItem>
+              <MenuItem value="English">English</MenuItem>
+              <MenuItem value="Spanish">Spanish</MenuItem>
+              <MenuItem value="French">French</MenuItem>
             </Select>
           </Box>
         </Box>
 
-        <Box className='row'>
-          <Box className='input-container'>
+        <Box className="row">
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='review-period-label'
+              variant="subtitle1"
+              className="label-title"
+              id="review-period-label"
             >
               Review Period
             </Typography>
             <Select
-              name='reviewPeriod'
+              name="reviewPeriod"
               value={formData.reviewPeriod}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='review-period-label'
+              variant="outlined"
+              aria-labelledby="review-period-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='1 month'>1 month</MenuItem>
-              <MenuItem value='3 months'>3 months</MenuItem>
-              <MenuItem value='6 months'>6 months</MenuItem>
+              <MenuItem value="1 month">1 month</MenuItem>
+              <MenuItem value="3 months">3 months</MenuItem>
+              <MenuItem value="6 months">6 months</MenuItem>
             </Select>
           </Box>
 
-          <Box className='input-container'>
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='budget-label'
+              variant="subtitle1"
+              className="label-title"
+              id="budget-label"
             >
               Budget
             </Typography>
             <TextField
-              name='budget'
+              name="budget"
               value={formData.budget}
               onChange={handleChange}
               fullWidth
               // type='number'
-              variant='outlined'
-              className='budget-input'
-              aria-labelledby='budget-label'
+              variant="outlined"
+              className="budget-input"
+              aria-labelledby="budget-label"
             />
           </Box>
         </Box>
       </Box>
 
-      <Box className='section'>
+      <Box className="section">
         <Typography
-          variant='h6'
-          className='section-title'
-          role='heading'
-          aria-level='2'
+          variant="h6"
+          className="section-title"
+          role="heading"
+          aria-level="2"
         >
           Status & Dates
         </Typography>
 
-        <Box className='row'>
-          <Box className='input-container'>
+        <Box className="row">
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='due-on-label'
+              variant="subtitle1"
+              className="label-title"
+              id="due-on-label"
             >
               Due On
             </Typography>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 value={formData.due}
-                onChange={(date) => handleDateChange('due', date)}
+                onChange={(date) => handleDateChange("due", date)}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     fullWidth
-                    variant='outlined'
+                    variant="outlined"
                     InputLabelProps={{ shrink: false }}
-                    aria-labelledby='due-on-label'
-                    aria-describedby='date-format-info'
+                    aria-labelledby="due-on-label"
+                    aria-describedby="date-format-info"
                   />
                 )}
               />
             </LocalizationProvider>
           </Box>
 
-          <Box className='input-container'>
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='publish-on-label'
+              variant="subtitle1"
+              className="label-title"
+              id="publish-on-label"
             >
               Publish On
             </Typography>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 value={formData.publishDate}
-                onChange={(date) => handleDateChange('publishDate', date)}
+                onChange={(date) => handleDateChange("publishDate", date)}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     fullWidth
-                    variant='outlined'
+                    variant="outlined"
                     InputLabelProps={{ shrink: false }}
-                    aria-labelledby='publish-on-label'
-                    aria-describedby='date-format-info'
+                    aria-labelledby="publish-on-label"
+                    aria-describedby="date-format-info"
                   />
                 )}
               />
@@ -555,126 +560,126 @@ const EditProject = () => {
           </Box>
         </Box>
 
-        <Box className='row'>
-          <Box className='input-container'>
+        <Box className="row">
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='status-label'
+              variant="subtitle1"
+              className="label-title"
+              id="status-label"
             >
               Status Update
             </Typography>
             <Select
-              name='status'
+              name="status"
               value={formData.status}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='status-label'
+              variant="outlined"
+              aria-labelledby="status-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='Under review'>Under review</MenuItem>
-              <MenuItem value='In progress'>In progress</MenuItem>
-              <MenuItem value='To-do'>To-do</MenuItem>
-              <MenuItem value='Completed'>Completed</MenuItem>
+              <MenuItem value="Under review">Under review</MenuItem>
+              <MenuItem value="In progress">In progress</MenuItem>
+              <MenuItem value="To-do">To-do</MenuItem>
+              <MenuItem value="Completed">Completed</MenuItem>
             </Select>
           </Box>
 
-          <Box className='input-container'>
+          <Box className="input-container">
             <Typography
-              variant='subtitle1'
-              className='label-title'
-              id='priority-label'
+              variant="subtitle1"
+              className="label-title"
+              id="priority-label"
             >
               Priority
             </Typography>
             <Select
-              name='priority'
+              name="priority"
               value={formData.priority}
               onChange={handleChange}
               displayEmpty
               fullWidth
-              variant='outlined'
-              aria-labelledby='priority-label'
+              variant="outlined"
+              aria-labelledby="priority-label"
               IconComponent={() => (
                 <img
                   src={vectorIcon}
-                  alt=''
-                  aria-hidden='true'
+                  alt=""
+                  aria-hidden="true"
                   style={{ width: 12, height: 12, marginRight: 8 }}
                 />
               )}
             >
-              <MenuItem value='High'>High</MenuItem>
-              <MenuItem value='Medium'>Medium</MenuItem>
-              <MenuItem value='Low'>Low</MenuItem>
+              <MenuItem value="High">High</MenuItem>
+              <MenuItem value="Medium">Medium</MenuItem>
+              <MenuItem value="Low">Low</MenuItem>
             </Select>
           </Box>
         </Box>
       </Box>
 
-      <Box className='section'>
+      <Box className="section">
         <Typography
-          variant='h6'
-          className='section-title'
-          role='heading'
-          aria-level='2'
+          variant="h6"
+          className="section-title"
+          role="heading"
+          aria-level="2"
         >
           Additional Options
         </Typography>
 
-        <Box className='row'>
+        <Box className="row">
           <FormControl
-            component='fieldset'
+            component="fieldset"
             sx={{ marginRight: 40 }}
-            aria-labelledby='urgency-label'
+            aria-labelledby="urgency-label"
           >
             <Typography
-              variant='body1'
-              className='option-label'
-              id='urgency-label'
+              variant="body1"
+              className="option-label"
+              id="urgency-label"
             >
               Urgency
             </Typography>
             <RadioGroup
               row
-              name='urgency'
+              name="urgency"
               value={formData.urgency}
               onChange={handleChange}
               sx={{ gap: 5 }}
-              aria-labelledby='urgency-label'
+              aria-labelledby="urgency-label"
             >
-              <FormControlLabel value='Yes' control={<Radio />} label='Yes' />
-              <FormControlLabel value='No' control={<Radio />} label='No' />
+              <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
 
-          <FormControl component='fieldset' aria-labelledby='open-source-label'>
+          <FormControl component="fieldset" aria-labelledby="open-source-label">
             <Typography
-              variant='body1'
-              className='option-label'
-              id='open-source-label'
+              variant="body1"
+              className="option-label"
+              id="open-source-label"
             >
               Open Source
             </Typography>
             <RadioGroup
               row
-              name='openSource'
+              name="openSource"
               value={formData.openSource}
               onChange={handleChange}
               sx={{ gap: 5 }}
-              aria-labelledby='open-source-label'
+              aria-labelledby="open-source-label"
             >
-              <FormControlLabel value='Yes' control={<Radio />} label='Yes' />
-              <FormControlLabel value='No' control={<Radio />} label='No' />
+              <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
         </Box>
@@ -684,91 +689,91 @@ const EditProject = () => {
             <Checkbox
               checked={formData.priorityTask}
               onChange={handleCheckboxChange}
-              name='priorityTask'
-              aria-labelledby='priority-task-label'
+              name="priorityTask"
+              aria-labelledby="priority-task-label"
             />
           }
           label={
-            <Typography id='priority-task-label'>Priority task</Typography>
+            <Typography id="priority-task-label">Priority task</Typography>
           }
         />
       </Box>
 
-      <Box className='section'>
+      <Box className="section">
         <Typography
-          variant='h6'
-          className='section-title'
-          role='heading'
-          aria-level='2'
+          variant="h6"
+          className="section-title"
+          role="heading"
+          aria-level="2"
         >
           Editor Note
         </Typography>
 
         <Typography
-          variant='subtitle1'
-          className='label-title'
-          id='editor-note-label'
+          variant="subtitle1"
+          className="label-title"
+          id="editor-note-label"
         >
           Notes
         </Typography>
 
         <TextField
-          name='editorNote'
+          name="editorNote"
           value={formData.editorNote}
           onChange={handleChange}
           fullWidth
           multiline
           rows={2}
-          className='input-field description-input'
-          aria-labelledby='editor-note-label' // Ensures screen readers announce it correctly
+          className="input-field description-input"
+          aria-labelledby="editor-note-label" // Ensures screen readers announce it correctly
         />
       </Box>
 
-      <Box className='section'>
+      <Box className="section">
         <Typography
-          variant='h6'
-          className='section-title'
-          role='heading'
-          aria-level='2'
+          variant="h6"
+          className="section-title"
+          role="heading"
+          aria-level="2"
         >
           Instructions
         </Typography>
 
         <Typography
-          variant='subtitle1'
-          className='label-title'
-          id='instructions-label'
+          variant="subtitle1"
+          className="label-title"
+          id="instructions-label"
         >
           Instructions
         </Typography>
 
         <TextField
-          name='instructions'
+          name="instructions"
           value={formData.instructions}
           onChange={handleChange}
           fullWidth
           multiline
           rows={2}
-          className='input-field description-input'
-          aria-labelledby='instructions-label' // Screen readers will correctly announce the label
+          className="input-field description-input"
+          aria-labelledby="instructions-label" // Screen readers will correctly announce the label
         />
       </Box>
 
-      <Box className='actions' aria-live='polite'>
+      <Box className="actions" aria-live="polite">
         <Button
-          variant='outlined'
-          className='cancel-btn'
+          variant="outlined"
+          className="cancel-btn"
           onClick={handleCancel}
-          aria-label='Cancel and discard changes'
+          aria-label="Cancel and discard changes"
         >
           Cancel
         </Button>
 
         <Button
-          variant='contained'
-          className='save-btn'
+          variant="contained"
+          className="save-btn"
           onClick={handleSave}
-          aria-label='Save your changes'
+          aria-label="Save your changes"
         >
           Save
         </Button>
