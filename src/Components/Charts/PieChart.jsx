@@ -21,13 +21,13 @@ const CustomPieChart = () => {
           cy='50%'
           outerRadius={65}
           dataKey='value'
-          aria-hidden='true' // Hides pie slices from screen readers to avoid redundant data
+          aria-hidden='true'
         >
           {pieChartData.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
               fill={COLORS[index % COLORS.length]}
-              role='presentation' // Prevents screen readers from reading each cell
+              role='presentation'
             />
           ))}
         </Pie>
