@@ -112,11 +112,11 @@ const EditProject = () => {
 
   const handleSave = () => {
     console.log('Saving form data:', formData);
-    navigate('/');
+    navigate("/dashboard-ui");
   };
 
   const handleCancel = () => {
-    navigate('/');
+    navigate("/dashboard-ui");
   };
 
   return (

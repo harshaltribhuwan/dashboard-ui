@@ -7,13 +7,13 @@ import "./App.scss";
 
 function App() {
   return (
-      <div className="App">
-        <Sidebar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/EditProject" element={<EditProject />} />
-        </Routes>
-      </div>
+    <div className="App">
+      <Sidebar />
+      <Routes>
+        <Route path="/dashboard-ui" element={<Dashboard />} />
+        <Route path="/EditProject" element={<EditProject />} />
+      </Routes>
+    </div>
   );
 }
 
