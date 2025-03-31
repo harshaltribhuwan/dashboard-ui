@@ -67,7 +67,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
       aria-describedby='modal-description'
     >
       <Box className='modal-box' sx={{ fontFamily: 'inherit' }}>
-        {/* Modal Header */}
         <Box className='modal-header'>
           <Typography id='modal-title' variant='h6'>
             Task Actions
@@ -147,7 +146,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </Grid>
         </Grid>
 
-        {/* Second Row: Assigned To & Status */}
         <Grid container spacing={2} className='modal-row'>
           <Grid item xs={12} md={6}>
             <Typography variant='subtitle1' className='section-title'>
@@ -193,7 +191,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </Grid>
         </Grid>
 
-        {/* File Upload */}
         <Typography variant='subtitle1' className='section-title'>
           Assigned to
         </Typography>
@@ -245,7 +242,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           )}
         </Box>
 
-        {/* Modal Actions */}
         <Box className='modal-actions'>
           <Button
             onClick={handleClose}

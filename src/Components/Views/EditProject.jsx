@@ -159,7 +159,6 @@ const EditProject = () => {
           Manuscript Information
         </Typography>
 
-        {/* Manuscript Name Field */}
         <Typography
           variant="subtitle1"
           className="label-title"
@@ -180,7 +179,6 @@ const EditProject = () => {
           />
         </Box>
 
-        {/* Description Field */}
         <Box>
           <Typography
             variant="subtitle1"
@@ -263,7 +261,7 @@ const EditProject = () => {
               variant="outlined"
               className="input-field author-input"
             >
-              {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
+              {["Sarah Johnson", "John Doe"].map((option) => (
                 <MenuItem key={option} value={option}>
                   {option}
                 </MenuItem>
@@ -271,7 +269,6 @@ const EditProject = () => {
             </TextField>
           </Box>
 
-          {/* Branch Dropdown */}
           <FormControl fullWidth margin="normal" className="input-field">
             <Typography
               variant="subtitle1"
@@ -487,7 +484,6 @@ const EditProject = () => {
               value={formData.budget}
               onChange={handleChange}
               fullWidth
-              // type='number'
               variant="outlined"
               className="budget-input"
               aria-labelledby="budget-label"
@@ -725,7 +721,7 @@ const EditProject = () => {
           multiline
           rows={2}
           className="input-field description-input"
-          aria-labelledby="editor-note-label" // Ensures screen readers announce it correctly
+          aria-labelledby="editor-note-label"
         />
       </Box>
 
@@ -755,7 +751,7 @@ const EditProject = () => {
           multiline
           rows={2}
           className="input-field description-input"
-          aria-labelledby="instructions-label" // Screen readers will correctly announce the label
+          aria-labelledby="instructions-label"
         />
       </Box>
 

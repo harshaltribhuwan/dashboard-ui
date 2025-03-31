@@ -23,7 +23,7 @@ const CustomStackedBarChart = () => {
           dataKey='month'
           tickLine={false}
           padding={{ left: 10, right: 10 }}
-          aria-hidden='true' // Hides from screen readers since it's visual-only
+          aria-hidden='true'
         />
         <YAxis
           width={30}

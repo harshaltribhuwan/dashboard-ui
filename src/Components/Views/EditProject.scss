@@ -68,7 +68,6 @@
             line-height: 30px !important;
             color: #00324E !important;
             font-family: $primary-font !important;
-            // margin-bottom: 16px !important;
         }
 
         .label-title {
@@ -88,19 +87,14 @@
                 align-items: center;
             }
 
-            /* Fix for description textarea */
             &.description-input {
                 .MuiInputBase-root {
-                    // height: auto !important; /* Allow it to expand based on content */
                     min-height: 90px !important;
-                    /* Ensures at least 3 rows */
                     align-items: flex-start !important;
-                    /* Align text to top */
                     padding: 10px 12px !important;
                 }
 
                 textarea {
-                    /* Allow user to resize */
                     line-height: 1.5 !important;
                     padding: 8px !important;
                 }
@@ -117,7 +111,7 @@
             input {
                 font-family: $primary-font !important;
                 font-size: 14px !important;
-                color: #00324E !important; // Ensure readability
+                color: #00324E !important;
             }
 
             .MuiSelect-select {
@@ -143,7 +137,7 @@
                 font-weight: 500 !important;
                 font-size: 12px !important;
                 line-height: 18px !important;
-                margin-bottom: 4px !important; // Consistent label spacing
+                margin-bottom: 4px !important;
             }
 
             .MuiSelect-root,
@@ -152,16 +146,15 @@
             }
 
             .MuiInputBase-root {
-                height: 40px !important; // Ensuring uniform input height
+                height: 40px !important;
                 padding: 8px 12px !important;
                 display: flex;
                 align-items: center;
             }
 
-            // Fixing Budget input alignment
             .budget-input {
                 .MuiInputBase-root {
-                    padding: 8px 12px !important; // Match other inputs
+                    padding: 8px 12px !important;
                     height: 40px !important;
                 }
             }

@@ -22,7 +22,7 @@ const CustomLineChart = () => {
           tickLine={false}
           interval={1}
           padding={{ left: 10, right: 10 }}
-          aria-hidden='true' // Hides it from screen readers since it's just a visual guide
+          aria-hidden='true'
         />
         <YAxis
           width={30}
