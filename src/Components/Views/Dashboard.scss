@@ -1,7 +1,7 @@
 @use "../../styles/variables.scss" as *;
 
 .dashboard {
-margin-left: 230px;
+  margin-left: 230px;
   padding: 20px;
   width: 80%;
   max-width: calc(100% - 230px);
@@ -41,19 +41,29 @@ margin-left: 230px;
     flex: 1;
   }
 
-
-        .heading-container {
-          margin-top: 85px;
-
-  h4 {
-    font-family: $primary-font;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 35px;
-    letter-spacing: 0%;
-    vertical-align: middle;
+  .project-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
-}
+
+
+  .heading-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 105px;
+
+    h4 {
+      font-family: $primary-font;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 35px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+  }
 
   .table-heading {
     font-family: $primary-font;
@@ -67,4 +77,29 @@ margin-left: 230px;
 
 .recharts-legend-wrapper {
   margin-top: 20px !important;
+}
+
+.search-input {
+  width: 300px;
+  border-radius: 50px !important;
+
+  .MuiOutlinedInput-root {
+    border-radius: 50px !important;
+    font-size: 12px;
+    font-family: $primary-font;
+    color: #00324E;
+  }
+
+  /* Fix placeholder color */
+  .MuiOutlinedInput-input::placeholder {
+    font-size: 12px;
+    font-family: $primary-font;
+    color: #00324E !important;
+    opacity: 1 !important;  /* Ensures placeholder color is fully visible */
+  }
+
+  /* Optional: Adjust icon size */
+  .MuiInputAdornment-root svg {
+    font-size: 18px;
+  }
 }

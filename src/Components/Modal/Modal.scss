@@ -44,6 +44,7 @@
 }
 
 .modal-row {
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -190,7 +191,7 @@
 
 .modal-box .MuiInputBase-root {
     height: 40px;
-    padding: 5px 10px; 
+    padding: 5px 3px;
 }
 
 .modal-box .MuiSelect-select {
@@ -198,6 +199,7 @@
 }
 
 .modal-box {
+
     .MuiInputBase-input,
     .MuiSelect-select,
     .MuiChip-label,
@@ -217,4 +219,8 @@
     font-size: 12px !important;
     line-height: 18px !important;
     letter-spacing: 2% !important;
+}
+
+.MuiSvgIcon-root {
+    color: #0070B0;
 }

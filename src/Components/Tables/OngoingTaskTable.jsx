@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -7,12 +7,12 @@ import {
   TableHead,
   TableRow,
   Paper,
-  IconButton,
-} from "@mui/material";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import TaskModal from "../Modal/TaskModal";
-import { ongoingTasksData } from "../Data/mockData.js";
-import "./Table.scss";
+  IconButton
+} from '@mui/material';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import TaskModal from '../Modal/TaskModal';
+import { ongoingTasksData } from '../Data/mockData.js';
+import './Table.scss';
 
 const OngoingTasksTable = () => {
   const [open, setOpen] = useState(false);
@@ -26,14 +26,14 @@ const OngoingTasksTable = () => {
   const handleClose = () => setOpen(false);
 
   const handleSave = (updatedTask) => {
-    console.log("Updated Task:", updatedTask);
+    console.log('Updated Task:', updatedTask);
     handleClose();
   };
 
   return (
     <>
-      <TableContainer component={Paper} className="table-container">
-        <Table>
+      <TableContainer component={Paper} className='table-container'>
+        <Table aria-label='Ongoing tasks table'>
           <TableHead>
             <TableRow>
               <TableCell>Manuscript</TableCell>
@@ -46,7 +46,7 @@ const OngoingTasksTable = () => {
           </TableHead>
           <TableBody>
             {ongoingTasksData.map((row, index) => (
-              <TableRow key={index}>
+              <TableRow key={index} tabIndex={0}>
                 <TableCell>{row.manuscript}</TableCell>
                 <TableCell>{row.author}</TableCell>
                 <TableCell>{row.assignedTo}</TableCell>
@@ -55,15 +55,18 @@ const OngoingTasksTable = () => {
                   <span
                     className={`status ${row.status
                       .toLowerCase()
-                      .replace(" ", "-")}`}
+                      .replace(' ', '-')}`}
+                    role='status'
+                    aria-label={`Status: ${row.status}`}
                   >
                     {row.status}
                   </span>
                 </TableCell>
                 <TableCell>
                   <IconButton
-                    className="edit-icon"
+                    className='edit-icon'
                     onClick={() => handleOpen(row)}
+                    aria-label={`Edit task for ${row.manuscript}`}
                   >
                     <EditOutlinedIcon />
                   </IconButton>

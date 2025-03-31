@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Table,
   TableBody,
@@ -7,23 +7,23 @@ import {
   TableHead,
   TableRow,
   Paper,
-  IconButton,
-} from "@mui/material";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import { projectTasksData } from "../Data/mockData.js";
-import { useNavigate } from "react-router-dom";
-import "./Table.scss";
+  IconButton
+} from '@mui/material';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import { projectTasksData } from '../Data/mockData.js';
+import { useNavigate } from 'react-router-dom';
+import './Table.scss';
 
 const ProjectTasksTable = () => {
   const navigate = useNavigate();
 
   const handleEditClick = (taskData) => {
-    navigate("/EditProject", { state: { taskData } });
+    navigate('/EditProject', { state: { taskData } });
   };
 
   return (
-    <TableContainer component={Paper} className="table-container">
-      <Table>
+    <TableContainer component={Paper} className='table-container'>
+      <Table aria-label='Project tasks table'>
         <TableHead>
           <TableRow>
             <TableCell>Task</TableCell>
@@ -36,7 +36,7 @@ const ProjectTasksTable = () => {
         </TableHead>
         <TableBody>
           {projectTasksData.map((row, index) => (
-            <TableRow key={index}>
+            <TableRow key={index} tabIndex={0}>
               <TableCell>{row.task}</TableCell>
               <TableCell>{row.assignedTo}</TableCell>
               <TableCell>{row.author}</TableCell>
@@ -45,15 +45,18 @@ const ProjectTasksTable = () => {
                 <span
                   className={`status ${row.priority
                     .toLowerCase()
-                    .replace(" ", "-")}`}
+                    .replace(' ', '-')}`}
+                  role='status'
+                  aria-label={`Priority: ${row.priority}`}
                 >
                   {row.priority}
                 </span>
               </TableCell>
               <TableCell>
                 <IconButton
-                  className="edit-icon"
+                  className='edit-icon'
                   onClick={() => handleEditClick(row)}
+                  aria-label={`Edit task: ${row.task}`}
                 >
                   <EditOutlinedIcon />
                 </IconButton>

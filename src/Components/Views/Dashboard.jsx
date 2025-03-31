@@ -1,40 +1,71 @@
-import React from "react";
-import LineChart from "../Charts/LineChart.jsx";
-import PieChart from "../Charts/PieChart.jsx";
-import StackedBarChart from "../Charts/StackedBarChart.jsx";
-import OngoingTasksTable from "../Tables/OngoingTaskTable.jsx";
-import ProjectTasksTable from "../Tables/ProjectTaskTable.jsx";
-import "./Dashboard.scss";
+import React from 'react';
+import LineChart from '../Charts/LineChart.jsx';
+import PieChart from '../Charts/PieChart.jsx';
+import { TextField, InputAdornment } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import StackedBarChart from '../Charts/StackedBarChart.jsx';
+import OngoingTasksTable from '../Tables/OngoingTaskTable.jsx';
+import ProjectTasksTable from '../Tables/ProjectTaskTable.jsx';
+import './Dashboard.scss';
 
 const Dashboard = () => {
   return (
-    <div className="dashboard">
-      <div className="header">
+    <div className='dashboard'>
+      <header className='header'>
         <h2>Hi Ted!</h2>
-      </div>
-      <div className="charts">
-        <div className="line-chart">
+      </header>
+
+      <section className='charts'>
+        <div className='line-chart'>
           <LineChart />
         </div>
-        <div className="pie-chart">
+        <div className='pie-chart'>
           <PieChart />
         </div>
-        <div className="bar-chart">
+        <div className='bar-chart'>
           <StackedBarChart />
         </div>
-      </div>
+      </section>
 
-      <div className="heading-container">
-        <h4 className="table-heading">Ongoing tasks</h4>
-      </div>
+      <section>
+        <div className='heading-container'>
+          <h4 className='table-heading'>Ongoing Tasks</h4>
+          <TextField
+            className="search-input"
+            variant="outlined"
+            placeholder="Search"
+            size="small"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </div>
+        <OngoingTasksTable />
+      </section>
 
-      <OngoingTasksTable />
-
-      <div>
-        <h4 className="table-heading">Project Tasks</h4>
-      </div>
-
-      <ProjectTasksTable />
+      <section>
+        <div className='project-container'>
+          <h4 className='table-heading'>Project Tasks</h4>
+          <TextField
+            className="search-input"
+            variant="outlined"
+            placeholder="Search"
+            size="small"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </div>
+        <ProjectTasksTable />
+      </section>
     </div>
   );
 };
