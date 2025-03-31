@@ -10,10 +10,17 @@ import {
   IconButton,
 } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import { projectTasksData } from "./mockData.js";
-import "../styles/Table.scss";
+import { projectTasksData } from "../Data/mockData.js";
+import { useNavigate } from "react-router-dom";
+import "./Table.scss";
 
 const ProjectTasksTable = () => {
+  const navigate = useNavigate();
+
+  const handleEditClick = (taskData) => {
+    navigate("/EditProject", { state: { taskData } });
+  };
+
   return (
     <TableContainer component={Paper} className="table-container">
       <Table>
@@ -44,7 +51,10 @@ const ProjectTasksTable = () => {
                 </span>
               </TableCell>
               <TableCell>
-                <IconButton className="edit-icon">
+                <IconButton
+                  className="edit-icon"
+                  onClick={() => handleEditClick(row)}
+                >
                   <EditOutlinedIcon />
                 </IconButton>
               </TableCell>

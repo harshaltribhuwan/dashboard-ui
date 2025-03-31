@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "../../styles/variables.scss" as *;
 
 .table-container {
   border-radius: 12px;
@@ -69,7 +69,7 @@
 
   .status.to-do {
     background: #FCF6DA;
-    color: #786400; // Orange color for "To do"
+    color: #786400; 
   }
 
   .status.high {
@@ -78,11 +78,7 @@
   }
 
     .edit-icon {
-      color: #0070B0 !important; // Apply the blue color
+      color: #0070B0 !important;
       transition: 0.3s;
-  
-      // &:hover {
-      //   color: darken(#0070B0, 10%); // Darken color on hover
-      // }
     }
 }

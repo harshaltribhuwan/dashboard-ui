@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "../../styles/variables.scss" as *;
 
 .modal-box {
     background: #FFFFFF;
@@ -21,7 +21,6 @@
     font-family: inherit !important;
 }
 
-/* Header */
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -36,7 +35,6 @@
     color: #00324E;
 }
 
-/* Labels for all input fields, including Manuscript */
 .section-title {
     color: #0070B0;
     margin-bottom: 4px !important;
@@ -45,7 +43,6 @@
     line-height: 18px !important;
 }
 
-/* Rows */
 .modal-row {
     display: flex;
     flex-wrap: wrap;
@@ -57,28 +54,24 @@
     min-width: 300px;
 }
 
-/* Manuscript Label & Text */
 .manuscript-section {
     display: flex;
     flex-direction: column;
 }
 
 .manuscript-text {
-    color: #00324E !important; // Ensures proper text color
-    background: none; // Removes any gray background
-    padding: 6px 0; // Adds slight spacing for alignment
+    color: #00324E !important;
+    background: none;
+    padding: 6px 0;
     display: flex;
-    align-items: center; // Aligns text properly
-    height: 40px; // Matches TextField input height
-
-
+    align-items: center;
+    height: 40px;
     font-weight: 400 !important;
     font-size: 12px !important;
     line-height: 18px !important;
     vertical-align: middle !important;
 }
 
-/* File Upload Section */
 .file-upload-wrapper {
     display: flex;
     gap: 16px;
@@ -86,21 +79,24 @@
 }
 
 .file-upload-container {
-    width: 50%; // Takes half the modal width
+    width: 50%;
     display: flex;
-    flex-direction: column; // Stack elements vertically
+    flex-direction: column;
     gap: 5px;
 }
 
-/* File Drop Area */
 .file-drop-area {
-    border: 2px dashed #b0b0b0;
+    font-family: $primary-font !important;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1%;
+    border: 2px dashed #94A3B8;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    background-color: #f9f9f9;
-    color: #7d7d7d;
-    min-height: 80px;
+    color: #00324E;
+    min-height: 50px;
     width: 100%;
 
     &:hover {
@@ -109,21 +105,23 @@
     }
 }
 
-/* File format info - Right-aligned and within container width */
 .file-format-info {
-    font-size: 12px;
-    color: gray;
+
+    font-family: $primary-font !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    font-size: 12px !important;
+    color: #1E293BBF !important;
     text-align: right;
     margin-top: 4px;
     width: 100%;
 }
 
-/* File Preview Section */
 .file-preview-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 100%; // Ensures it takes full modal width
+    width: 100%;
 }
 
 .file-preview-header {
@@ -132,7 +130,6 @@
     width: 100%;
 }
 
-/* Uploaded file styling */
 .uploaded-file {
     padding: 8px;
     display: flex;
@@ -149,35 +146,62 @@
     color: #ff0000;
 }
 
-/* Modal Actions */
 .modal-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 10px; // Adds space between buttons
-    margin-top: 20px; // Adjust spacing from the file upload section
+    margin-top: 20px;
+    gap: 12px;
+
+    .cancel-btn {
+        font-family: $primary-font !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-transform: none !important;
+        padding: 8px 16px !important;
+        border-radius: 6px !important;
+        color: #1A3D7D !important;
+        border: 1px solid #1A3D7D !important;
+        background-color: transparent !important;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+        }
+    }
+
+    .save-btn {
+        font-family: $primary-font !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-transform: none !important;
+        padding: 8px 16px !important;
+        border-radius: 6px !important;
+        background-color: #1A3D7D !important;
+        color: #FFFFFF !important;
+
+        &:hover {
+            background-color: #1A3D7D !important;
+        }
+    }
 }
 
 .modal-box .MuiTextField-root {
-    font-size: 14px; // Smaller font size
+    font-size: 14px;
 }
 
 .modal-box .MuiInputBase-root {
-    height: 40px; // Reduce input height
-    padding: 5px 10px; // Adjust padding
+    height: 40px;
+    padding: 5px 10px; 
 }
 
 .modal-box .MuiSelect-select {
-    padding: 8px 12px; // Adjust select dropdown padding
+    padding: 8px 12px;
 }
 
-// Apply styling to all form elements inside the modal
 .modal-box {
-
     .MuiInputBase-input,
     .MuiSelect-select,
     .MuiChip-label,
     .uploaded-file {
-        // For file preview
         font-family: $primary-font !important;
         font-weight: 400 !important;
         font-size: 12px !important;
@@ -187,7 +211,6 @@
     }
 }
 
-// Apply styles to the dropdown menu items
 .MuiMenuItem-root {
     font-family: $primary-font !important;
     font-weight: 400 !important;

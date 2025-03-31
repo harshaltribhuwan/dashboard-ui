@@ -12,11 +12,11 @@ import {
   Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import "../styles/Modal.scss";
+import "./Modal.scss";
 
 const TaskModal = ({ open, handleClose, task, onSave }) => {
   const [editedTask, setEditedTask] = React.useState(task);
-  const [author, setAuthor] = React.useState([]);
+  const [author, setAuthor] = React.useState(["Sarah Johnson"]);
   const [files, setFiles] = React.useState([]);
 
   useEffect(() => {
@@ -52,7 +52,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
   return (
     <Modal open={open} onClose={handleClose}>
       <Box className="modal-box" sx={{ fontFamily: "inherit" }}>
-        {/* Header */}
         <Box className="modal-header">
           <Typography variant="h6">Task Actions</Typography>
           <IconButton className="close-btn" onClick={handleClose}>
@@ -60,9 +59,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </IconButton>
         </Box>
 
-        {/* First Row: Manuscript & Author */}
         <Grid container spacing={2} alignItems="center" className="modal-row">
-          {/* Manuscript Section */}
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
               Manuscript
@@ -72,7 +69,6 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             </Typography>
           </Grid>
 
-          {/* Author Section */}
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
               Author
@@ -94,11 +90,11 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
                         label={value}
                         onDelete={() => handleRemoveFile(value)}
                         sx={{
-                          backgroundColor: "#F1F5F9", // Custom background color
-                          color: "#0070B0", // Custom text color
+                          backgroundColor: "#F1F5F9",
+                          color: "#0070B0", 
                           fontWeight: "bold",
                           "& .MuiChip-deleteIcon": {
-                            color: "#0070B0", // Custom delete icon color
+                            color: "#0070B0",
                           },
                         }}
                       />
@@ -107,21 +103,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
                 ),
               }}
               variant="outlined"
-              label="" // Removes floating label
-              sx={{
-                fontFamily: `"Merriweather Sans", sans-serif`,
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "18px",
-                letterSpacing: "2%",
-                "& .MuiInputBase-input": {
-                  fontFamily: `"Merriweather Sans", sans-serif`,
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "18px",
-                  letterSpacing: "2%",
-                },
-              }}
+              label=""
             >
               {["Sarah Johnson", "John Doe", "Jane Smith"].map((option) => (
                 <MenuItem key={option} value={option}>
@@ -136,7 +118,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
         <Grid container spacing={2} className="modal-row">
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className="section-title">
-              Assigned To
+              Assigned to
             </Typography>
             <TextField
               name="assignedTo"
@@ -145,7 +127,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               value={editedTask?.assignedTo || ""}
               onChange={handleChange}
               variant="outlined"
-              label="" // Removes floating label
+              label=""
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -160,21 +142,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
               value={editedTask?.status || ""}
               onChange={handleChange}
               variant="outlined"
-              label="" // Removes floating label
-              sx={{
-                fontFamily: `"Merriweather Sans", sans-serif`,
-                fontWeight: 400,
-                fontSize: "12px",
-                lineHeight: "18px",
-                letterSpacing: "2%",
-                "& .MuiInputBase-input": {
-                  fontFamily: `"Merriweather Sans", sans-serif`,
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "18px",
-                  letterSpacing: "2%",
-                },
-              }}
+              label=""
             >
               <MenuItem value="In progress">In progress</MenuItem>
               <MenuItem value="To do">To do</MenuItem>
@@ -183,12 +151,10 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           </Grid>
         </Grid>
 
-        {/* Assigned To Section (File Upload) */}
         <Typography variant="subtitle1" className="section-title">
           Assigned to
         </Typography>
         <Box className="file-upload-container">
-          {/* File Drop Area */}
           <Box
             className="file-drop-area"
             onDrop={handleFileDrop}
@@ -197,7 +163,7 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             <Typography>
               Drag and drop files here or{" "}
               <span
-                style={{ color: "blue", cursor: "pointer" }}
+                style={{ color: "#0070B0", cursor: "pointer" }}
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 browse files
@@ -212,12 +178,10 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
             />
           </Box>
 
-          {/* Supported Formats (Bottom, Right-aligned) */}
           <Typography className="file-format-info">
             Supported formats: PDF, DOCX (max. 50 mb)
           </Typography>
 
-          {/* File Preview (Below the upload area) */}
           {files.length > 0 && (
             <Box className="file-preview-container">
               {files.map((file, index) => (
@@ -235,12 +199,19 @@ const TaskModal = ({ open, handleClose, task, onSave }) => {
           )}
         </Box>
 
-        {/* Modal Actions */}
-        <Box className="modal-actions" sx={{ display: "flex", gap: 2 }}>
-          <Button onClick={handleClose} variant="outlined">
+        <Box className="modal-actions">
+          <Button
+            onClick={handleClose}
+            variant="outlined"
+            className="cancel-btn"
+          >
             Cancel
           </Button>
-          <Button onClick={() => onSave(editedTask)} variant="contained">
+          <Button
+            onClick={() => onSave(editedTask)}
+            variant="contained"
+            className="save-btn"
+          >
             Save
           </Button>
         </Box>

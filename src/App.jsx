@@ -1,14 +1,19 @@
 import React from "react";
-import Sidebar from "./Components/Sidebar.jsx";
-import Dashboard from "./Components/Dashboard.jsx";
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "./Components/Views/Sidebar.jsx";
+import Dashboard from "./Components/Views/Dashboard.jsx";
+import EditProject from "./Components/Views/EditProject.jsx";
 import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-      <Dashboard />
-    </div>
+      <div className="App">
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/EditProject" element={<EditProject />} />
+        </Routes>
+      </div>
   );
 }
 

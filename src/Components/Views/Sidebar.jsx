@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemText } from "@mui/material";
-import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked"; // Circle icon
-import "../styles/Sidebar.scss";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import "./Sidebar.scss";
 
 const Sidebar = () => {
   return (
@@ -13,7 +13,6 @@ const Sidebar = () => {
       <p>Text</p>
 
       <List>
-        {/* Dashboard */}
         <ListItem component="div">
           <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
           <ListItemText
@@ -22,7 +21,6 @@ const Sidebar = () => {
           />
         </ListItem>
 
-        {/* Tasks */}
         <ListItem component="div">
           <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
           <ListItemText primary="Tasks" className="MuiListItemText-primary" />
@@ -30,7 +28,6 @@ const Sidebar = () => {
 
         <hr className="sidebar-divider" />
 
-        {/* Articles */}
         <ListItem component="div">
           <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
           <ListItemText
@@ -39,7 +36,6 @@ const Sidebar = () => {
           />
         </ListItem>
 
-        {/* Users */}
         <ListItem component="div">
           <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
           <ListItemText primary="Users" className="MuiListItemText-primary" />

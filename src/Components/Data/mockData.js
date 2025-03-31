@@ -1,4 +1,3 @@
-// src/mockData.js
 export const lineChartData = [
     { date: "12 Mar", articles: 20 },
     { date: "13 Mar", articles: 10 },

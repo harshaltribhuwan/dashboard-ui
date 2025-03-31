@@ -1,10 +1,10 @@
 import React from "react";
-import LineChart from "./Charts/LineChart";
-import PieChart from "./Charts/PieChart";
-import StackedBarChart from "./Charts/StackedBarChart.jsx";
-import OngoingTasksTable from "./OngoingTaskTable";
-import ProjectTasksTable from "./ProjectTaskTable.jsx";
-import "../styles/Dashboard.scss";
+import LineChart from "../Charts/LineChart.jsx";
+import PieChart from "../Charts/PieChart.jsx";
+import StackedBarChart from "../Charts/StackedBarChart.jsx";
+import OngoingTasksTable from "../Tables/OngoingTaskTable.jsx";
+import ProjectTasksTable from "../Tables/ProjectTaskTable.jsx";
+import "./Dashboard.scss";
 
 const Dashboard = () => {
   return (
