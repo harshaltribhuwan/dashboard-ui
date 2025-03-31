@@ -1,10 +1,16 @@
-import { List, ListItem, ListItemText } from "@mui/material";
-import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
-import "./Sidebar.scss";
+import { List, ListItem, ListItemText } from '@mui/material';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import { useNavigate } from 'react-router-dom';
+import './Sidebar.scss';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
-    <div className="sidebar">
+    <div
+      className='sidebar'
+      role='navigation'
+      aria-label='Editor Management Portal'
+    >
       <h3>
         Editor <br />
         Management Portal
@@ -13,32 +19,38 @@ const Sidebar = () => {
       <p>Text</p>
 
       <List>
-        <ListItem component="div">
-          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
+        <ListItem
+          component='div'
+          onClick={() => navigate('/')}
+          tabIndex='0'
+          role='button'
+          aria-current={window.location.pathname === '/' ? 'page' : undefined}
+        >
+          <RadioButtonUncheckedIcon className='sidebar-circle-icon' />
           <ListItemText
-            primary="Dashboard"
-            className="MuiListItemText-primary"
+            primary='Dashboard'
+            className='MuiListItemText-primary'
           />
         </ListItem>
 
-        <ListItem component="div">
-          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
-          <ListItemText primary="Tasks" className="MuiListItemText-primary" />
+        <ListItem component='div' tabIndex='0' role='button'>
+          <RadioButtonUncheckedIcon className='sidebar-circle-icon' />
+          <ListItemText primary='Tasks' className='MuiListItemText-primary' />
         </ListItem>
 
-        <hr className="sidebar-divider" />
+        <hr className='sidebar-divider' />
 
-        <ListItem component="div">
-          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
+        <ListItem component='div' tabIndex='0' role='button'>
+          <RadioButtonUncheckedIcon className='sidebar-circle-icon' />
           <ListItemText
-            primary="Articles"
-            className="MuiListItemText-primary"
+            primary='Articles'
+            className='MuiListItemText-primary'
           />
         </ListItem>
 
-        <ListItem component="div">
-          <RadioButtonUncheckedIcon className="sidebar-circle-icon" />
-          <ListItemText primary="Users" className="MuiListItemText-primary" />
+        <ListItem component='div' tabIndex='0' role='button'>
+          <RadioButtonUncheckedIcon className='sidebar-circle-icon' />
+          <ListItemText primary='Users' className='MuiListItemText-primary' />
         </ListItem>
       </List>
     </div>

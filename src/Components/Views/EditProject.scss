@@ -4,7 +4,7 @@
     margin-left: 230px;
     padding: 20px;
     width: 80%;
-    max-width: calc(100% - 230px);
+    max-width: calc(80% - 230px);
     box-sizing: border-box;
     font-family: $primary-font;
 
@@ -68,7 +68,7 @@
             line-height: 30px !important;
             color: #00324E !important;
             font-family: $primary-font !important;
-            margin-bottom: 16px !important;
+            // margin-bottom: 16px !important;
         }
 
         .label-title {
@@ -80,16 +80,94 @@
             line-height: 18px !important;
         }
 
+        .input-field {
+            .MuiInputBase-root {
+                height: 40px !important;
+                padding: 5px 5px !important;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Fix for description textarea */
+            &.description-input {
+                .MuiInputBase-root {
+                    // height: auto !important; /* Allow it to expand based on content */
+                    min-height: 90px !important;
+                    /* Ensures at least 3 rows */
+                    align-items: flex-start !important;
+                    /* Align text to top */
+                    padding: 10px 12px !important;
+                }
+
+                textarea {
+                    resize: vertical !important;
+                    /* Allow user to resize */
+                    line-height: 1.5 !important;
+                    padding: 8px !important;
+                }
+            }
+        }
+
+        .input-field {
+            font-family: $primary-font !important;
+
+            .MuiInputBase-root,
+            .MuiOutlinedInput-root,
+            .MuiSelect-root,
+            textarea,
+            input {
+                font-family: $primary-font !important;
+                font-size: 14px !important;
+                color: #00324E !important; // Ensure readability
+            }
+
+            .MuiSelect-select {
+                font-family: $primary-font !important;
+            }
+
+            .MuiChip-root {
+                font-family: $primary-font !important;
+            }
+        }
+
+
+
         .input-container {
             display: flex;
             flex-direction: column;
             width: calc(50% - 8px);
             min-width: 250px;
 
-            .MuiInputAdornment-root svg {
+            .label-title {
+                font-family: $primary-font !important;
                 color: #0070B0;
+                font-weight: 500 !important;
+                font-size: 12px !important;
+                line-height: 18px !important;
+                margin-bottom: 4px !important; // Consistent label spacing
+            }
+
+            .MuiSelect-root,
+            .MuiTextField-root {
+                font-size: 14px !important;
+            }
+
+            .MuiInputBase-root {
+                height: 40px !important; // Ensuring uniform input height
+                padding: 8px 12px !important;
+                display: flex;
+                align-items: center;
+            }
+
+            // Fixing Budget input alignment
+            .budget-input {
+                .MuiInputBase-root {
+                    padding: 8px 12px !important; // Match other inputs
+                    height: 40px !important;
+                }
             }
         }
+
 
         .row {
             display: flex;
@@ -121,7 +199,16 @@
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+                width: 100%;
+
+                .author-label {
+                    margin-top: 14px;
+                }
+
+                .author-input {
+                    margin-top: 2px;
+                }
 
                 .author-list {
                     display: flex;
@@ -167,8 +254,10 @@
 
             .input-field {
                 flex: 1;
+                width: 100%;
             }
         }
+
 
         .file-upload {
             .drop-zone {
@@ -344,4 +433,52 @@
 
 .MuiSelect-icon {
     color: #0070B0 !important;
+}
+
+.edit-project {
+    font-family: $primary-font !important;
+
+    * {
+        font-family: $primary-font !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    label,
+    button,
+    a {
+        font-family: $primary-font !important;
+    }
+
+    input,
+    textarea,
+    select {
+        color: #00324E !important;
+        font-size: 12px !important;
+        font-family: $primary-font !important;
+    }
+
+    .MuiSvgIcon-root {
+        color: #0070B0 !important;
+    }
+
+}
+
+.MuiFormGroup-root {
+    margin-left: 3px;
+}
+
+.MuiChip-label {
+    font-family: $primary-font !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    letter-spacing: 2% !important;
+    vertical-align: middle !important;
 }
