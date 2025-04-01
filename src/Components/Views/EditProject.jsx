@@ -174,7 +174,7 @@ const EditProject = () => {
             onChange={handleChange}
             variant="outlined"
             row={2}
-            className="input-field"
+            className="input-field manuscript-input"
             aria-labelledby="manuscript-name-label"
           />
         </Box>
