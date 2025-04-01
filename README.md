@@ -1,8 +1,11 @@
-# Dashboard UI
+# Dashboard UI  
 
-A modern dashboard UI built with React, Material-UI (MUI), Recharts, and Vite.
+A modern dashboard UI built with React, Material-UI (MUI), Recharts, and Vite.  
 
-## Tech Stack
+## 🚀 Live Demo  
+🔗 [View Live Project](<https://dashboard-ui-task.netlify.app/>)  
+
+## 🛠 Tech Stack  
 - React 19  
 - Material-UI (MUI)  
 - Recharts  
@@ -11,8 +14,9 @@ A modern dashboard UI built with React, Material-UI (MUI), Recharts, and Vite.
 - SASS  
 - ESLint  
 
-## Installation
+## 📦 Installation  
 ```sh
-git clone https://github.com/harshaltribhuwan/dashboard-ui.git
+git clone https://github.com/harshaltribhuwan/dashboard-ui.git  
 cd dashboard-ui  
 npm install  
+npm run dev  
